@@ -1,0 +1,40 @@
+# Ignore config.php
+config.php
+
+# Ignore user data directories
+/dataroot/
+
+# Ignore cache and session data
+/cache/
+/localcache/
+/sessions/
+/temp/
+/upgradelogs/
+
+# Ignore external libraries (if you're using Composer)
+/vendor/
+
+# Ignore log files
+/error.log
+/access.log
+
+# Ignore backups
+*.mbz
+/backup/
+
+# Ignore any personal notes or temp files
+*.swp
+*.bak
+*.tmp
+
+# Ignore node_modules if you're using npm for frontend dev
+/node_modules/
+
+# Ignore IDE files (e.g., PHPStorm, VSCode)
+.idea/
+.vscode/
+*.iml
+
+# Ignore other system files (macOS, Windows)
+.DS_Store
+Thumbs.db

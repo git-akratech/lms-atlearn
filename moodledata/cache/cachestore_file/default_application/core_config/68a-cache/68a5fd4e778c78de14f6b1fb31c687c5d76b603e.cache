@@ -1,0 +1,396 @@
+a:505:{s:7:"version";s:14:"20241018005.01";s:13:"darkmodetheme";s:1:"1";s:13:"darkmodefirst";s:1:"0";s:9:"sdarkmode";s:9:"Dark Mode";s:10:"slightmode";s:10:"Light Mode";s:11:"themeauthor";s:1:"1";s:9:"backtotop";s:1:"1";s:12:"forcefwvideo";s:1:"1";s:24:"showswitchedroleincourse";s:1:"0";s:20:"showhintcoursehidden";s:1:"0";s:25:"showhintcourseguestaccess";s:1:"0";s:23:"showhintcourseselfenrol";s:1:"0";s:15:"unaddableblocks";s:45:"navigation,settings,course_list,section_links";s:15:"googleanalytics";s:0:"";s:7:"favicon";s:16:"/faviconlogo.ico";s:9:"favicon16";s:0:"";s:9:"favicon32";s:0:"";s:16:"faviconsafaritab";s:0:"";s:21:"faviconsafaritabcolor";s:7:"#000000";s:17:"seoappletouchicon";s:0:"";s:11:"seometadesc";s:0:"";s:13:"seothemecolor";s:0:"";s:13:"googlefonturl";s:171:"https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";s:12:"fontheadings";s:6:"Roboto";s:18:"fontweightheadings";s:3:"700";s:8:"fontbody";s:6:"Roboto";s:17:"fontweightregular";s:3:"400";s:16:"fontweightmedium";s:3:"500";s:14:"fontweightbold";s:3:"700";s:11:"colorbodybg";s:0:"";s:11:"colorborder";s:0:"";s:15:"btnborderradius";s:0:"";s:9:"colorbody";s:0:"";s:18:"colorbodysecondary";s:0:"";s:14:"colorbodylight";s:0:"";s:13:"colorheadings";s:0:"";s:9:"colorlink";s:0:"";s:14:"colorlinkhover";s:0:"";s:15:"colorprimary600";s:0:"";s:15:"colorprimary100";s:0:"";s:15:"colorprimary200";s:0:"";s:15:"colorprimary300";s:0:"";s:15:"colorprimary400";s:0:"";s:15:"colorprimary500";s:0:"";s:15:"colorprimary700";s:0:"";s:15:"colorprimary800";s:0:"";s:15:"colorprimary900";s:0:"";s:12:"colorgray100";s:0:"";s:12:"colorgray200";s:0:"";s:12:"colorgray300";s:0:"";s:12:"colorgray400";s:0:"";s:12:"colorgray500";s:0:"";s:12:"colorgray600";s:0:"";s:12:"colorgray700";s:0:"";s:12:"colorgray800";s:0:"";s:12:"colorgray900";s:0:"";s:13:"dmcolorbodybg";s:0:"";s:13:"dmcolorborder";s:0:"";s:11:"dmcolorbody";s:0:"";s:20:"dmcolorbodysecondary";s:0:"";s:16:"dmcolorbodylight";s:0:"";s:15:"dmcolorheadings";s:0:"";s:11:"dmcolorlink";s:0:"";s:16:"dmcolorlinkhover";s:0:"";s:14:"dmcolorgray100";s:0:"";s:14:"dmcolorgray200";s:0:"";s:14:"dmcolorgray300";s:0:"";s:14:"dmcolorgray400";s:0:"";s:14:"dmcolorgray500";s:0:"";s:14:"dmcolorgray600";s:0:"";s:14:"dmcolorgray700";s:0:"";s:14:"dmcolorgray800";s:0:"";s:14:"dmcolorgray900";s:0:"";s:14:"mycoursesontop";s:1:"1";s:17:"customsidebarlogo";s:0:"";s:19:"customsidebardmlogo";s:0:"";s:15:"customstcontent";s:0:"";s:15:"customsmcontent";s:0:"";s:15:"customsfcontent";s:0:"";s:16:"customcitcontent";s:0:"";s:16:"customcibcontent";s:0:"";s:18:"labelsidebaropened";s:16:"Open the sidebar";s:18:"labelsidebarclosed";s:17:"Close the sidebar";s:16:"turnoffsidebarfp";s:1:"0";s:23:"turnoffsidebardashboard";s:1:"0";s:20:"turnoffsidebarcourse";s:1:"0";s:22:"turnoffsidebarincourse";s:1:"0";s:20:"turnoffsidebarreport";s:1:"0";s:22:"turnoffsidebarstandard";s:1:"0";s:19:"turnoffsidebaradmin";s:1:"0";s:16:"showmycoursesbox";s:1:"1";s:11:"hidedetails";s:1:"0";s:15:"stringmycourses";s:10:"My Courses";s:15:"stringnocourses";s:0:"";s:16:"stringshowhidden";s:19:"Show hidden courses";s:24:"stringshowonlyinprogress";s:24:"Only courses in progress";s:13:"stringdetails";s:0:"";s:16:"stringallcourses";s:383:"<span>List of all available courses</span>
+<svg width="18"
+height="18"
+fill="none"
+viewBox="0
+0
+24
+24"><path
+stroke="currentColor"
+stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="1.5"
+d="M13.75 6.75L19.25 12L13.75 17.25"></path>
+<path
+stroke="currentColor"
+stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="1.5"
+d="M19 12H4.75"></path></svg>";s:22:"mycourseswrapperheight";s:0:"";s:13:"colordrawerbg";s:7:"#001B48";s:15:"colordrawertext";s:0:"";s:23:"colordrawernavcontainer";s:0:"";s:21:"colordrawernavbtnicon";s:0:"";s:22:"colordrawernavbtniconh";s:0:"";s:21:"colordrawernavbtntext";s:0:"";s:22:"colordrawernavbtntexth";s:7:"#000005";s:20:"colordrawernavbtnbgh";s:7:"#d1feff";s:26:"colordrawernavbtntextlight";s:0:"";s:20:"colordrawerscrollbar";s:0:"";s:15:"colordrawerlink";s:0:"";s:16:"colordrawerlinkh";s:0:"";s:16:"isitemonsitehome";s:1:"1";s:11:"possitehome";s:1:"1";s:17:"isitemondashboard";s:1:"1";s:12:"posdashboard";s:1:"2";s:16:"isitemoncalendar";s:1:"0";s:11:"poscalendar";s:1:"3";s:20:"isitemonprivatefiles";s:1:"1";s:15:"posprivatefiles";s:1:"4";s:19:"isitemoncontentbank";s:1:"1";s:14:"poscontentbank";s:1:"5";s:17:"isitemonmycourses";s:1:"0";s:12:"posmycourses";s:1:"6";s:15:"iscustomitem1on";s:1:"0";s:14:"poscustomitem1";s:1:"7";s:16:"labelcustomitem1";s:0:"";s:15:"iconcustomitem1";s:0:"";s:14:"urlcustomitem1";s:0:"";s:15:"iscustomitem2on";s:1:"0";s:14:"poscustomitem2";s:1:"8";s:16:"labelcustomitem2";s:0:"";s:15:"iconcustomitem2";s:0:"";s:14:"urlcustomitem2";s:0:"";s:15:"iscustomitem3on";s:1:"0";s:14:"poscustomitem3";s:1:"9";s:16:"labelcustomitem3";s:0:"";s:15:"iconcustomitem3";s:0:"";s:14:"urlcustomitem3";s:0:"";s:15:"iscustomitem4on";s:1:"0";s:14:"poscustomitem4";s:2:"10";s:16:"labelcustomitem4";s:0:"";s:15:"iconcustomitem4";s:0:"";s:14:"urlcustomitem4";s:0:"";s:15:"iscustomitem5on";s:1:"0";s:14:"poscustomitem5";s:2:"11";s:16:"labelcustomitem5";s:0:"";s:15:"iconcustomitem5";s:0:"";s:14:"urlcustomitem5";s:0:"";s:14:"customnavitems";s:0:"";s:20:"turnoffdashboardlink";s:1:"0";s:16:"topbaradminbtnon";s:1:"0";s:14:"topbareditmode";s:1:"0";s:16:"topbarlogoareaon";s:1:"1";s:10:"customlogo";s:0:"";s:12:"customdmlogo";s:0:"";s:11:"logoandname";s:1:"0";s:13:"customlogotxt";s:11:"LMS.Atlearn";s:16:"topbarcustomhtml";s:0:"";s:13:"colortopbarbg";s:7:"#001B48";s:15:"colortopbartext";s:7:"#FFFFFF";s:14:"colortopbarbtn";s:0:"";s:18:"colortopbarbtntext";s:7:"#FFFFFF";s:19:"colortopbarbtnhover";s:0:"";s:23:"colortopbarbtnhovertext";s:0:"";s:14:"setloginlayout";s:1:"3";s:14:"loginidprovtop";s:1:"0";s:15:"customloginlogo";s:18:"/loginpagelogo.png";s:17:"customlogindmlogo";s:0:"";s:16:"loginlogooutside";s:1:"0";s:19:"customsignupoutside";s:1:"1";s:7:"loginbg";s:16:"/loginpagebg.gif";s:12:"loginbgcolor";s:0:"";s:18:"hideforgotpassword";s:1:"0";s:12:"logininfobox";s:0:"";s:14:"loginintrotext";s:108:"<h3 dir="ltr"><strong>Login into your account</strong></h3>
+<h6>Welcome back! Please enter your detail</h6>";s:17:"loginhtmlcontent1";s:0:"";s:17:"loginhtmlcontent2";s:0:"";s:20:"loginhtmlblockbottom";s:0:"";s:17:"loginhtmlcontent3";s:0:"";s:18:"loginfootercontent";s:0:"";s:21:"logincustomfooterhtml";s:0:"";s:8:"stringca";s:22:"Don't have an account?";s:17:"stringbacktologin";s:24:"Already have an account?";s:15:"signupintrotext";s:0:"";s:10:"signuptext";s:0:"";s:16:"defaultcourseimg";s:0:"";s:14:"courselistview";s:1:"0";s:18:"hidecourseindexnav";s:1:"0";s:11:"cccteachers";s:1:"1";s:14:"setcourseimage";s:1:"0";s:15:"ipcoursesummary";s:1:"1";s:17:"courseprogressbar";s:1:"1";s:9:"cccfooter";s:1:"1";s:12:"stringaccess";s:10:"Get access";s:10:"cccsummary";s:1:"0";s:23:"maxcoursecardtextheight";s:0:"";s:19:"coursecarddesclimit";s:3:"100";s:16:"showcustomfields";s:1:"1";s:15:"courselangbadge";s:1:"1";s:15:"secnavgroupitem";s:1:"1";s:11:"secnavitems";s:1:"0";s:17:"showfooterbuttons";s:1:"1";s:12:"footercenter";s:1:"0";s:12:"footerblock1";s:0:"";s:12:"footerblock2";s:1229:"<div class="rui-footer-nav row text-sm-center text-md-left my-5">
+<div class="col-sm-12 col-md-6 col-lg my-sm-2 my-md-0">
+<h5 class="rui-footer-nav-title">Company</h5>
+<ul class="rui-footer-nav-items list-unstyled mb-0">
+<li><a href="#">About Us</a></li>
+<li><a href="#">Blog</a><span class="badge-xs badge-success ml-2">New</span></li>
+<li><a href="#">FAQ</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Help</a></li>
+</ul>
+</div>
+<div class="col-sm-12 col-md-6 col-lg my-sm-2 my-md-0">
+<h5 class="rui-footer-nav-title">Products</h5>
+<ul class="rui-footer-nav-items list-unstyled mb-0">
+<li><a href="#">Parents</a></li>
+<li><a href="#">Schools</a></li>
+<li><a href="#">Partners</a></li>
+</ul>
+</div>
+<div class="col-sm-12 col-md-6 col-lg my-sm-2 my-md-0">
+<h5 class="rui-footer-nav-title">Legal</h5>
+<ul class="rui-footer-nav-items list-unstyled mb-0">
+<li><a href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-sm-12 col-md-6 col-lg my-sm-2 my-md-0">
+<h5 class="rui-footer-nav-title">Office</h5>
+<ul class="rui-footer-nav-items list-unstyled mb-0">
+<li>
+<p>Victoria Garden City, Lagos</p>
+</li>
+<li>1234 Fruitvale Avenue, Oakland, Califonia, USA.</li>
+</ul>
+</div>
+</div>";s:12:"footerblock3";s:121:"<p>Get this theme exclusively on the ThemeForest: More premium moodle themes: <a href="https://rosea.io">rosea.io</a></p>";s:10:"footercopy";s:132:"<p><strong>Copyright © 2023 Alpha Moodle Theme. All right reserved.</strong></p>
+<p>Alpha premium moodle theme by RoseaThemes.</p>";s:13:"colorfooterbg";s:7:"#001B48";s:17:"colorfooterborder";s:0:"";s:15:"colorfootertext";s:7:"#FFFFFF";s:15:"colorfooterlink";s:7:"#FFFFFF";s:20:"colorfooterlinkhover";s:0:"";s:11:"footerbgimg";s:0:"";s:15:"footercustomcss";s:0:"";s:7:"website";s:13:"Moodle Themes";s:11:"cwebsiteurl";s:16:"https://rosea.io";s:6:"mobile";s:29:"Mobile : +12 (34) 00123-45678";s:4:"mail";s:15:"sample@mail.com";s:14:"showsociallist";s:1:"0";s:8:"facebook";s:0:"";s:7:"twitter";s:0:"";s:8:"linkedin";s:0:"";s:7:"youtube";s:0:"";s:9:"instagram";s:0:"";s:16:"customsocialicon";s:0:"";s:18:"displaycustomalert";s:1:"0";s:16:"closecustomalert";s:1:"0";s:13:"customalertid";s:1:"1";s:15:"customalerthtml";s:0:"";s:21:"additionalheadscripts";s:0:"";s:6:"hvpcss";s:0:"";s:7:"scsspre";s:0:"";s:4:"scss";s:0:"";s:9:"fontfiles";s:0:"";s:6:"block0";s:1:"2";s:6:"block1";s:1:"1";s:6:"block2";s:1:"2";s:6:"block3";s:1:"3";s:6:"block4";s:1:"4";s:6:"block5";s:1:"5";s:6:"block6";s:1:"6";s:6:"block7";s:1:"7";s:6:"block8";s:1:"8";s:6:"block9";s:1:"9";s:7:"block10";s:2:"10";s:7:"block11";s:2:"11";s:7:"block12";s:2:"12";s:7:"block13";s:2:"13";s:7:"block14";s:2:"14";s:7:"block15";s:2:"15";s:7:"block16";s:2:"16";s:7:"block17";s:2:"17";s:7:"block18";s:2:"18";s:7:"block19";s:2:"19";s:7:"block20";s:1:"1";s:7:"block21";s:1:"2";s:7:"block22";s:1:"3";s:7:"block23";s:1:"4";s:13:"displayblock1";s:1:"0";s:8:"block1fw";s:1:"1";s:11:"block1class";s:0:"";s:18:"block1wrapperalign";s:1:"1";s:19:"block1herotitlesize";s:1:"1";s:20:"block1herotitlecolor";s:1:"0";s:21:"block1herotitleweight";s:1:"1";s:23:"showblock1sliderwrapper";s:1:"1";s:21:"block1sliderwrapperbg";s:0:"";s:20:"block1sliderinterval";s:4:"6000";s:11:"block1count";s:1:"1";s:15:"block1slideimg1";s:0:"";s:17:"block1slidetitle1";s:0:"";s:19:"block1slidecaption1";s:603:"<div class="rui-hero-desc">
+<p>The Alpha 2 is dedicated only to Moodle 4.0 and later. For Moodle 3.9 - 3.11 there is Alpha 1.15</p>
+<p class="mt-3 small">Need help with theme customization?<br>Or do you want to report a bug?</p>
+</div>
+<div class="rui-hero-btns mt-3 2-100"><a class="btn btn-lg btn-primary my-1" href="https://1.envato.market/3PgWgB" target="_blank" rel="noopener">Get this theme!</a></div>
+<div class="rui-hero-btns mt-3 w-100"><a class="btn btn-sm btn-light my-1 mx-0" href="https://rosea.io/alpha-theme/" target="_blank" rel="noopener">Alpha 1.15 for Moodle 3.9 - 3.11</a></div>";s:15:"block1slidecss1";s:0:"";s:13:"displayblock2";s:1:"0";s:8:"block2fw";s:1:"1";s:11:"block2class";s:0:"";s:18:"block2wrapperalign";s:1:"1";s:17:"showblock2wrapper";s:1:"0";s:15:"block2wrapperbg";s:0:"";s:18:"block2introcontent";s:0:"";s:15:"block2herotitle";s:0:"";s:20:"block2herosubheading";s:0:"";s:19:"block2herotitlesize";s:1:"1";s:20:"block2herotitlecolor";s:1:"1";s:21:"block2herotitleweight";s:1:"1";s:17:"block2herocaption";s:603:"<div class="rui-hero-desc">
+<p>The Alpha 2 is dedicated only to Moodle 4.0 and later. For Moodle 3.9 - 3.11 there is Alpha 1.15</p>
+<p class="mt-3 small">Need help with theme customization?<br>Or do you want to report a bug?</p>
+</div>
+<div class="rui-hero-btns mt-3 2-100"><a class="btn btn-lg btn-primary my-1" href="https://1.envato.market/3PgWgB" target="_blank" rel="noopener">Get this theme!</a></div>
+<div class="rui-hero-btns mt-3 w-100"><a class="btn btn-sm btn-light my-1 mx-0" href="https://rosea.io/alpha-theme/" target="_blank" rel="noopener">Alpha 1.15 for Moodle 3.9 - 3.11</a></div>";s:17:"block2htmlcontent";s:0:"";s:19:"block2footercontent";s:0:"";s:17:"block2videoposter";s:0:"";s:14:"block2videomp4";s:0:"";s:15:"block2videowebm";s:0:"";s:13:"displayblock3";s:1:"0";s:8:"block3fw";s:1:"1";s:11:"block3class";s:0:"";s:18:"block3wrapperalign";s:1:"1";s:17:"showblock3wrapper";s:1:"0";s:15:"block3wrapperbg";s:0:"";s:18:"block3introcontent";s:0:"";s:15:"block3herotitle";s:0:"";s:20:"block3herosubheading";s:0:"";s:19:"block3herotitlesize";s:1:"1";s:20:"block3herotitlecolor";s:1:"0";s:21:"block3herotitleweight";s:1:"1";s:17:"block3herocaption";s:603:"<div class="rui-hero-desc">
+<p>The Alpha 2 is dedicated only to Moodle 4.0 and later. For Moodle 3.9 - 3.11 there is Alpha 1.15</p>
+<p class="mt-3 small">Need help with theme customization?<br>Or do you want to report a bug?</p>
+</div>
+<div class="rui-hero-btns mt-3 2-100"><a class="btn btn-lg btn-primary my-1" href="https://1.envato.market/3PgWgB" target="_blank" rel="noopener">Get this theme!</a></div>
+<div class="rui-hero-btns mt-3 w-100"><a class="btn btn-sm btn-light my-1 mx-0" href="https://rosea.io/alpha-theme/" target="_blank" rel="noopener">Alpha 1.15 for Moodle 3.9 - 3.11</a></div>";s:9:"block3img";s:0:"";s:17:"block3htmlcontent";s:0:"";s:19:"block3footercontent";s:0:"";s:13:"displayblock4";s:1:"0";s:15:"displayhrblock4";s:1:"1";s:11:"block4class";s:0:"";s:16:"block4introtitle";s:14:"Help & Support";s:18:"block4introcontent";s:117:"Custom FAQ block. You can add up to 20 items.
+<br />Of course you can copy a code and use it everywhere on the page.";s:19:"block4footercontent";s:24:"Lorem ipsum dolar set...";s:17:"block4htmlcontent";s:0:"";s:11:"block4count";s:1:"1";s:15:"block4question1";s:0:"";s:13:"block4answer1";s:0:"";s:13:"displayblock5";s:1:"0";s:15:"displayhrblock5";s:1:"1";s:11:"block5class";s:0:"";s:16:"block5introtitle";s:0:"";s:18:"block5introcontent";s:0:"";s:17:"block5htmlcontent";s:123:"<div class="wrapper-fw rui-block-desc rui-block-desc--lg">Custom block no.5 allows you to display multiple logotypes.</div>";s:19:"block5footercontent";s:0:"";s:18:"block5slidesperrow";s:1:"5";s:11:"block5count";s:1:"5";s:14:"block5itemimg1";s:0:"";s:16:"block5itemtitle1";s:0:"";s:14:"block5itemurl1";s:0:"";s:13:"displayblock6";s:1:"0";s:15:"displayhrblock6";s:1:"1";s:11:"block6class";s:0:"";s:16:"block6introtitle";s:0:"";s:18:"block6introcontent";s:0:"";s:17:"block6htmlcontent";s:1630:"<!-- Start - Block - Testimonials #2 -->
+<div class="wrapper-fw rui-block-testimonials-2">
+<div class="rui-card-testimonials-grid"><!-- Start item -->
+<div class="rui-block-testimonials-item d-flex justify-content-center text-center">
+<div class="rui-block-testimonials--quote">"Everything you need and nothing you do not"</div>
+<span class="rui-block-testimonials--author">Ryan Cook</span> <span class="rui-block-testimonials--additional mb-3">CEO | SoSimple</span> <img class="" src="https://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="100" height="34"></div>
+<!-- End item --><!-- Start item -->
+<div class="rui-block-testimonials-item d-flex justify-content-center text-center">
+<div class="rui-block-testimonials--quote">“I could not imagine using anything else!”</div>
+<span class="rui-block-testimonials--author">Tim Smith</span> <span class="rui-block-testimonials--additional mb-3">UX Designer | Clean Simple</span> <img class="" src="hhttps://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="100" height="34"></div>
+<!-- End item --><!-- Start item -->
+<div class="rui-block-testimonials-item d-flex justify-content-center text-center">
+<div class="rui-block-testimonials--quote">"One of the best Moodle Theme I have ever used”</div>
+<span class="rui-block-testimonials--author">Anna van Diesel</span> <span class="rui-block-testimonials--additional mb-3">Senior Product Designer | ABC Design</span> <img class="" src="https://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="100" height="25"></div>
+<!-- End item --></div>
+</div>
+<!-- End - Block - Testimonials #2 -->";s:19:"block6footercontent";s:0:"";s:13:"displayblock7";s:1:"0";s:15:"displayhrblock7";s:1:"1";s:11:"block7class";s:0:"";s:16:"block7introtitle";s:0:"";s:18:"block7introcontent";s:0:"";s:17:"block7htmlcontent";s:1649:"<!-- Start - Block - Grid Content #2 -->
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3"><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-color-card" style="background-color: #e9edf8; border-radius: 5px;">
+<div class="rui-card-body"><!-- icon -->
+<div> </div>
+<!-- end icon -->
+<h3 class="rui-card-title mt-4">Get started</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn btn-sm btn-dark mt-2" href="https://rosea.io">More quick guides</a></div>
+</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-color-card" style="background-color: #dcebe7; border-radius: 5px;">
+<div class="rui-card-body"><!-- icon -->
+<div> </div>
+<!-- end icon -->
+<h3 class="rui-card-title mt-4">Manage your course</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn btn-sm btn-dark mt-2" href="https://rosea.io">More for teachers</a></div>
+</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-color-card" style="background-color: #002eb3; border-radius: 5px;">
+<div class="rui-card-body" style="color: #fff;"><!-- icon -->
+<div> </div>
+<!-- end icon -->
+<h3 class="rui-card-title mt-4">Whats new</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn btn-sm btn-dark mt-2" href="https://rosea.io">New features list</a></div>
+</div>
+</div>
+<!-- End item --></div>
+<!-- End - Block - Grid Content #2 -->";s:19:"block7footercontent";s:0:"";s:13:"displayblock8";s:1:"0";s:15:"displayhrblock8";s:1:"1";s:11:"block8class";s:0:"";s:16:"block8introtitle";s:0:"";s:18:"block8introcontent";s:0:"";s:17:"block8htmlcontent";s:2679:"<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-0"><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-card--smpl">
+<div class="rui-card-body"><!-- icon -->
+<div class="mb-3"> </div>
+<!-- end icon -->
+<h3 class="rui-card-title">Get started</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn-link" href="https://rosea.io">More quick guides</a></div>
+</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-card--smpl">
+<div class="rui-card-body"><!-- icon -->
+<div class="mb-3"> </div>
+<!-- end icon -->
+<h3 class="rui-card-title">Manage your course</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn-link" href="https://rosea.io">More for teachers</a></div>
+</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-card--smpl">
+<div class="rui-card-body"><!-- icon -->
+<div class="mb-3"> </div>
+<!-- end icon -->
+<h3 class="rui-card-title">Add activities</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn-link" href="https://rosea.io">More activities</a></div>
+</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-card--smpl">
+<div class="rui-card-body"><!-- icon -->
+<div class="mb-3"> </div>
+<!-- end icon -->
+<h3 class="rui-card-title">Whats new</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn-link" href="https://rosea.io">New features list</a></div>
+</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-card--smpl">
+<div class="rui-card-body"><!-- icon -->
+<div class="mb-3"> </div>
+<!-- end icon -->
+<h3 class="rui-card-title">Manage your site</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn-link" href="https://rosea.io">More for administrators</a></div>
+</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-card-item col mb-4">
+<div class="rui-card--smpl">
+<div class="rui-card-body"><!-- icon -->
+<div class="mb-3"> </div>
+<!-- end icon -->
+<h3 class="rui-card-title">Premium Moodle Themes</h3>
+<p class="rui-card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a class="btn-link" href="https://rosea.io">Check out my portfolio</a></div>
+</div>
+</div>
+<!-- End item --></div>";s:19:"block8footercontent";s:0:"";s:13:"displayblock9";s:1:"0";s:15:"displayhrblock9";s:1:"1";s:11:"block9class";s:0:"";s:16:"block9introtitle";s:0:"";s:18:"block9introcontent";s:0:"";s:17:"block9htmlcontent";s:0:"";s:19:"block9footercontent";s:0:"";s:14:"displayblock10";s:1:"0";s:16:"displayhrblock10";s:1:"1";s:12:"block10class";s:0:"";s:17:"block10introtitle";s:0:"";s:19:"block10introcontent";s:0:"";s:18:"block10htmlcontent";s:1289:"<!-- Start - Block - Logotypes #1 -->
+<div class="wrapper-md rui-block-logotypes-1">
+<div class="w-lg-65 text-center mx-lg-auto"><!-- Heading -->
+<div class="mb-4">
+<p class="rui-block-text--1">Lorem ipsum dolar set</p>
+</div>
+<!-- End Heading -->
+<div class="row justify-content-center align-items-center">
+<div class="col-6 col-md py-3"><img class="img-fluid" src="https://assets.rosea.io/demofiles/alpha/block10/logo-1.svg" alt="Logo" width="200" height="67"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3"><img class="img-fluid" src="https://assets.rosea.io/demofiles/alpha/block10/logo-5.svg" alt="Logo" width="140" height="47"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3"><img class="img-fluid" src="https://assets.rosea.io/demofiles/alpha/block10/logo-2.svg" alt="Logo" width="110" height="28"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3"><img class="img-fluid" src="https://assets.rosea.io/demofiles/alpha/block10/logo-4.svg" alt="Logo" width="140" height="47"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3"><img class="img-fluid" src="https://assets.rosea.io/demofiles/alpha/block10/logo-3.svg" alt="Logo" width="140" height="47"></div>
+<!-- End Col --></div>
+<!-- End Row --></div>
+</div>
+<!-- End - Block - Logotypes #1 -->";s:20:"block10footercontent";s:0:"";s:14:"displayblock11";s:1:"0";s:16:"displayhrblock11";s:1:"1";s:12:"block11class";s:0:"";s:17:"block11introtitle";s:0:"";s:19:"block11introcontent";s:0:"";s:18:"block11htmlcontent";s:1717:"<div class="wrapper-xxl row no-gutters mt-5"><!-- Col #1 -->
+<div class="col-md pr-lg-3 mr-lg-3 align-self-center">
+<div class="mb-4 rui-img--rounded-fluid"><img src="https://assets.rosea.io/themes/img.jpg" alt="pic" width="800" height="533"></div>
+<div class="rui-card--blank">
+<h4 class="lead-4 mt-3">Get real-time insights on your performance.</h4>
+<p class="rui-card-text">Auto-generated reports: Get accurate insights on your performance...</p>
+<ul class="rui-special-list rui-special-list--primary">
+<li>Personal asset watchlists</li>
+<li>Curated market data feed</li>
+<li>20+ on-chain, social &amp; dev metrics</li>
+<li>Low-latency market signals and alerts</li>
+<li class="list-icon-x">Sansheets plugin with pre-made templates</li>
+</ul>
+<a class="rui-card-btn-link mt-2" href="https://rosea.io">Learn more about the Smart Keyboard</a></div>
+</div>
+<!-- End Col #1 --><!-- Col #2 -->
+<div class="col-md pl-lg-3 ml-lg-3 align-self-center">
+<div class="mb-4 rui-img--rounded-fluid"><img src="https://assets.rosea.io/themes/img.jpg" alt="pic" width="800" height="533"></div>
+<div class="rui-card--blank">
+<h4 class="lead-4 mt-3">Get real-time insights on your performance.</h4>
+<p class="rui-card-text">Auto-generated reports: Get accurate insights...</p>
+<ul class="rui-special-list rui-special-list--primary">
+<li>Personal asset watchlists</li>
+<li>Curated market data feed</li>
+<li>20+ on-chain, social &amp; dev metrics</li>
+<li>Low-latency market signals and alerts</li>
+<li class="list-icon-x">Sansheets plugin with pre-made templates</li>
+</ul>
+<a class="rui-card-btn-link mt-2" href="https://rosea.io">Learn more</a></div>
+</div>
+<!-- End Col #2 --></div>
+<!-- End item -->";s:20:"block11footercontent";s:0:"";s:14:"displayblock12";s:1:"0";s:16:"displayhrblock12";s:1:"1";s:12:"block12class";s:0:"";s:17:"block12introtitle";s:0:"";s:19:"block12introcontent";s:0:"";s:18:"block12htmlcontent";s:873:"<div class="row"><!-- Start item -->
+<div class="col-12 col-md-3 px-3 my-3 my-lg-0 text-center">
+<div class="display-3 mb-2">$99<sup class="text-muted">/ $3k</sup></div>
+<p class="text-light">Standard / Extended License</p>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="col-12 col-md-3 px-3 my-3 my-lg-0 text-center">
+<div class="display-3 mb-2">Free</div>
+<p class="text-light">Updates and bug fixes</p>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="col-12 col-md-3 px-3 my-3 my-lg-0 text-center">
+<div class="display-3 mb-2">1900+</div>
+<p class="text-light">Trusted users</p>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="col-12 col-md-3 px-3 my-3 my-lg-0 text-center">
+<div class="display-3 mb-2">Moodle</div>
+<p class="text-light">Compatible with Moodle 3.11 and later e.g Moodle 4.0</p>
+</div>
+<!-- End item --></div>";s:20:"block12footercontent";s:0:"";s:14:"displayblock13";s:1:"0";s:16:"displayhrblock13";s:1:"1";s:12:"block13class";s:0:"";s:16:"block13textalign";s:6:"center";s:16:"block13titlesize";s:1:"1";s:17:"block13titlecolor";s:1:"1";s:18:"block13titleweight";s:1:"1";s:17:"block13introtitle";s:0:"";s:19:"block13introcontent";s:0:"";s:18:"block13htmlcontent";s:0:"";s:20:"block13footercontent";s:0:"";s:9:"block13bg";s:0:"";s:16:"block13customcss";s:0:"";s:14:"displayblock14";s:1:"0";s:12:"block14class";s:0:"";s:16:"block14textalign";s:6:"center";s:16:"block14titlesize";s:1:"1";s:17:"block14titlecolor";s:1:"1";s:18:"block14titleweight";s:1:"1";s:16:"displayhrblock14";s:1:"1";s:17:"block14introtitle";s:0:"";s:19:"block14introcontent";s:0:"";s:18:"block14htmlcontent";s:0:"";s:9:"block14bg";s:0:"";s:16:"block14customcss";s:0:"";s:14:"displayblock15";s:1:"0";s:16:"displayhrblock15";s:1:"1";s:12:"block15class";s:0:"";s:17:"block15introtitle";s:0:"";s:19:"block15introcontent";s:0:"";s:18:"block15htmlcontent";s:0:"";s:20:"block15footercontent";s:0:"";s:9:"block15bg";s:0:"";s:16:"block15customcss";s:0:"";s:14:"displayblock16";s:1:"0";s:16:"displayhrblock16";s:1:"1";s:12:"block16class";s:0:"";s:17:"block16introtitle";s:0:"";s:19:"block16introcontent";s:0:"";s:18:"block16htmlcontent";s:1757:"<div class="wrapper-md text-center"><!-- start .badge -->
+<div class="badge badge-info">Space 2 is here! Only for Moodle 4.x</div>
+<h2 class="display-2 mt-4">Hi! Cześć! ¡Hola!<br>Space 2.2 is here!</h2>
+<p class="rui-block-text--1 mt-3">Completely redesigned user interface. Better UX. In-build dark mode. All Moodle 4.0 features! Optimized - 50% less CSS,</p>
+<div class="d-flex flex-wrap mt-4 justify-content-center w-100"><a class="m-2 btn btn-lg btn-dark" href="#" target="_blank" rel="noopener">Get this theme for $99*</a> <a class="m-2 btn btn-lg btn-secondary" href="#" target="_blank" rel="noopener">Documentation</a></div>
+<p class="rui-block-text--light rui-block-text--3 mt-3">Trusted by hundreds of customers</p>
+<div class="row justify-content-center align-items-center">
+<div class="col-6 col-md py-3 text-center"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="106" height="60"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3 text-center"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="206" height="80"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3 text-center"><img class="atto_image_button_middle" src="https://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="69" height="80"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3 text-center"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="386" height="80"></div>
+<!-- End Col -->
+<div class="col-6 col-md py-3 text-center"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/logo180x90.png" alt="" width="96" height="80"></div>
+<!-- End Col --></div>
+<!-- End Row --></div>
+<!-- end .wrapper-md -->";s:20:"block16footercontent";s:0:"";s:9:"block16bg";s:0:"";s:16:"block16customcss";s:0:"";s:14:"displayblock17";s:1:"0";s:16:"displayhrblock17";s:1:"1";s:12:"block17class";s:0:"";s:17:"block17introtitle";s:0:"";s:19:"block17introcontent";s:0:"";s:18:"block17htmlcontent";s:976:"<!-- Start - Block - Stats #2 -->
+<div class="row"><!-- Start item -->
+<div class="col-12 col-md-6 col-lg-3 px-3 my-3 my-lg-0 text-center text-md-left">
+<div class="lead-3 mb-2">$99</div>
+<p class="rui-card-text--md">Standard, Lifetime License</p>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="col-12 col-md-6 col-lg-3 px-3 my-3 my-lg-0 text-center text-md-left">
+<div class="lead-3 mb-2">Free</div>
+<p class="rui-card-text--md">Updates and bug fixes</p>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="col-12 col-md-6 col-lg-3 px-3 my-3 my-lg-0 text-center text-md-left">
+<div class="lead-3 mb-2">2000+</div>
+<p class="rui-card-text--md">Trusted users</p>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="col-12 col-md-6 col-lg-3 px-3 my-3 my-lg-0 text-center text-md-left">
+<div class="lead-3 mb-2">Moodle</div>
+<p class="rui-card-text--md">Compatible with 4.x</p>
+</div>
+<!-- End item --></div>
+<!-- End - Block - Stats #2 -->";s:20:"block17footercontent";s:0:"";s:9:"block17bg";s:0:"";s:16:"block17customcss";s:0:"";s:14:"displayblock18";s:1:"0";s:16:"displayhrblock18";s:1:"1";s:12:"block18class";s:0:"";s:17:"block18introtitle";s:0:"";s:19:"block18introcontent";s:144:"<div class="wrapper-md mb-5"><h3 class="rui-block-title">Team</h3>
+<div class="rui-block-desc text-center">Lorem ipsum dolar set...</div></div>";s:18:"block18htmlcontent";s:1540:"<!-- Start - Block - Team #3 -->
+<div class="wrapper-md rui-block-team-3">
+<div class="row"><!-- Start item -->
+<div class="rui-block-team-item text-left col-md-4"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/team.jpg" alt="Team #1" width="300" height="300">
+<h4 class="lead-4 mt-3 mb-0">Christa McAuliffe</h4>
+<div class="rui-block-text--3 rui-block-text--light">CEO</div>
+<div class="rui-block-text--2 mt-2">Multidisciplinary. Drinks too much coffee. Likes sentence fragments.</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-block-team-item text-left col-md-4"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/team.jpg" alt="ku" width="300" height="300">
+<h4 class="lead-4 mt-3 mb-0">Helen Keller</h4>
+<div class="rui-block-text--3 rui-block-text--light">Senior Vice President Services</div>
+<div class="rui-block-text--2 mt-2">Multidisciplinary. Drinks too much coffee. Likes sentence fragments.</div>
+</div>
+<!-- End item --><!-- Start item -->
+<div class="rui-block-team-item text-left col-md-4"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/team.jpg" alt="team #3" width="300" height="300">
+<h4 class="lead-4 mt-3 mb-0">Mark Twain</h4>
+<div class="rui-block-text--3 rui-block-text--light">Senior Vice President Machine Learning and AI Strategy</div>
+<div class="rui-block-text--2 mt-2">Multidisciplinary. Drinks too much coffee. Likes sentence fragments.</div>
+</div>
+<!-- End item --></div>
+<!-- End row --></div>
+<!-- End - Block - Team #3 -->";s:20:"block18footercontent";s:330:"<hr class="hr-small" />
+          <div class="wrapper-md mt-5 text-center">
+              <h4 class="lead-4">Join our team!</h4>
+              <div class="rui-block-text--2">Help us on our quest to make good software even better.</div>
+              <a href="#" class="btn btn-link">See courrent openings</a>
+          </div>";s:14:"displayblock19";s:1:"0";s:12:"block19class";s:0:"";s:16:"block19textalign";s:6:"center";s:16:"block19titlesize";s:1:"1";s:17:"block19titlecolor";s:1:"1";s:18:"block19titleweight";s:1:"1";s:16:"displayhrblock19";s:1:"1";s:17:"block19introtitle";s:42:"One-time charge<br />Get this theme today!";s:19:"block19introcontent";s:131:"Our exclusive lifetime update theme & user-centered design
+<br />will keep your moodle site running strong for many years to come!";s:18:"block19htmlcontent";s:225:"<div class="mt-4"><a class="btn btn-lg btn-dark" href="https://rosea.io/space">Get this theme for $99*</a></div>
+<div class="mt-2"><a class="btn btn-sm btn-secondary" href="https://space.rosea.io/doc">Documentation</a></div>";s:20:"block19footercontent";s:0:"";s:9:"block19bg";s:0:"";s:16:"block19customcss";s:49:"background-position: top; background-size: cover;";s:14:"displayblock20";s:1:"0";s:12:"block20class";s:0:"";s:9:"block20fw";s:1:"0";s:8:"herologo";s:0:"";s:11:"herologotxt";s:0:"";s:13:"imgslidesonly";s:1:"0";s:10:"sliderloop";s:1:"1";s:21:"sliderintervalenabled";s:1:"0";s:14:"sliderinterval";s:4:"6000";s:15:"sliderclickable";s:1:"0";s:9:"rtlslider";s:1:"0";s:11:"slidercount";s:1:"1";s:12:"sliderimage1";s:0:"";s:10:"sliderurl1";s:0:"";s:12:"slidertitle1";s:0:"";s:15:"slidersubtitle1";s:0:"";s:10:"slidercap1";s:0:"";s:11:"sliderhtml1";s:0:"";s:13:"sliderheight1";s:0:"";s:14:"slidebackdrop1";s:1:"0";s:14:"displayblock21";s:1:"0";s:16:"displayhrblock21";s:1:"1";s:12:"block21class";s:0:"";s:17:"block21introtitle";s:0:"";s:19:"block21introcontent";s:0:"";s:18:"block21htmlcontent";s:1680:"<!-- Start - Block - Grid Content #9 -->
+<div class="row row-cols-1 row-cols-lg-2 mt-5"><!-- Col #1 -->
+<div class="p-3">
+<div class="mb-4 rui-img--rounded-fluid"><img src="https://assets.rosea.io/themes/img.jpg" alt="pic" width="800" height="533"></div>
+<div class="rui-card--blank">
+<h4 class="lead-4 mt-3">Get real-time insights on your performance.</h4>
+<p class="rui-card-text">Auto-generated reports: Get accurate insights...</p>
+<ul class="rui-special-list rui-special-list--primary">
+<li>Personal asset watchlists</li>
+<li>Curated market data feed</li>
+<li>20+ on-chain, social &amp; dev metrics</li>
+<li>Low-latency market signals and alerts</li>
+<li class="list-icon-x">Sansheets plugin with pre-made templates</li>
+</ul>
+<a class="rui-card-btn-link mt-2" href="https://rosea.io">Learn more</a></div>
+</div>
+<!-- End Col #1 --><!-- Col #2 -->
+<div class="p-3">
+<div class="mb-4 rui-img--rounded-fluid"><img src="https://assets.rosea.io/themes/img.jpg" alt="pic" width="800" height="533"></div>
+<div class="rui-card--blank">
+<h4 class="lead-4 mt-3">Get real-time insights on your performance.</h4>
+<p class="rui-card-text">Auto-generated reports: Get accurate insights...</p>
+<ul class="rui-special-list rui-special-list--primary">
+<li>Personal asset watchlists</li>
+<li>Curated market data feed</li>
+<li>20+ on-chain, social &amp; dev metrics</li>
+<li>Low-latency market signals and alerts</li>
+<li class="list-icon-x">Sansheets plugin with pre-made templates</li>
+</ul>
+<a class="rui-card-btn-link mt-2" href="https://rosea.io">Learn more</a></div>
+</div>
+<!-- End Col #2 --></div>
+<!-- End item --><!-- End - Block - Grid Content #9 -->";s:20:"block21footercontent";s:0:"";s:14:"displayblock22";s:1:"0";s:16:"displayhrblock22";s:1:"1";s:12:"block22class";s:0:"";s:17:"block22introtitle";s:0:"";s:19:"block22introcontent";s:0:"";s:18:"block22htmlcontent";s:2896:"<div class="rui-card-cat-grid mx-0 w-100"><!-- Start item --><a class="rui-block-category-item" href="#">
+<div class="rui-block-category-item-icon"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/icon.svg" alt="" width="60" height="60"></div>
+<div class="ml-2 d-flex flex-wrap">
+<h3 class="rui-block-category-item-title">Art History</h3>
+<span class="rui-block-category-item-subtitle">3 courses</span></div>
+</a><!-- End item --><!-- Start item --><a class="rui-block-category-item" href="#">
+<div class="rui-block-category-item-icon"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/icon.svg" alt="" width="60" height="60"></div>
+<div class="ml-2 d-flex flex-wrap">
+<h3 class="rui-block-category-item-title">UI Design</h3>
+<span class="rui-block-category-item-subtitle">16 courses</span></div>
+</a><!-- End item --><!-- Start item --><a class="rui-block-category-item" href="#">
+<div class="rui-block-category-item-icon"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/icon.svg" alt="" width="60" height="60"></div>
+<div class="ml-2 d-flex flex-wrap">
+<h3 class="rui-block-category-item-title">3D Design</h3>
+<span class="rui-block-category-item-subtitle">4 courses</span></div>
+</a><!-- End item --><!-- Start item --><a class="rui-block-category-item" href="#">
+<div class="rui-block-category-item-icon"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/icon.svg" alt="" width="60" height="60"></div>
+<div class="ml-2 d-flex flex-wrap">
+<h3 class="rui-block-category-item-title">Media &amp; PR</h3>
+<span class="rui-block-category-item-subtitle">9 courses</span></div>
+</a><!-- End item --><!-- Start item --><a class="rui-block-category-item" href="#">
+<div class="rui-block-category-item-icon"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/icon.svg" alt="" width="60" height="60"></div>
+<div class="ml-2 d-flex flex-wrap">
+<h3 class="rui-block-category-item-title">Programming</h3>
+<span class="rui-block-category-item-subtitle">2 courses</span></div>
+</a><!-- End item --><!-- Start item --><a class="rui-block-category-item" href="#">
+<div class="rui-block-category-item-icon"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/icon.svg" alt="" width="60" height="60"></div>
+<div class="ml-2 d-flex flex-wrap">
+<h3 class="rui-block-category-item-title">Music</h3>
+<span class="rui-block-category-item-subtitle">6 courses</span></div>
+</a><!-- End item --><!-- Start item --><a class="rui-block-category-item" href="#">
+<div class="rui-block-category-item-icon"><img class="img-fluid" src="https://assets.rosea.io/alpha/demo/icon.svg" alt="" width="60" height="60"></div>
+<div class="ml-2 d-flex flex-wrap">
+<h3 class="rui-block-category-item-title">Language courses</h3>
+<span class="rui-block-category-item-subtitle">3 courses</span></div>
+</a><!-- End item --></div>";s:20:"block22footercontent";s:0:"";s:14:"displayblock23";s:1:"0";s:16:"displayhrblock23";s:1:"1";s:12:"block23class";s:0:"";s:17:"block23introtitle";s:0:"";s:19:"block23introcontent";s:0:"";s:26:"fpcustomcategoryblockhtml1";s:0:"";s:26:"fpcustomcategoryblockhtml2";s:0:"";s:26:"fpcustomcategoryblockhtml3";s:0:"";s:20:"block23footercontent";s:0:"";s:14:"block5itemimg2";s:0:"";s:16:"block5itemtitle2";s:0:"";s:14:"block5itemurl2";s:0:"";s:14:"block5itemimg3";s:0:"";s:16:"block5itemtitle3";s:0:"";s:14:"block5itemurl3";s:0:"";s:14:"block5itemimg4";s:0:"";s:16:"block5itemtitle4";s:0:"";s:14:"block5itemurl4";s:0:"";s:14:"block5itemimg5";s:0:"";s:16:"block5itemtitle5";s:0:"";s:14:"block5itemurl5";s:0:"";}
