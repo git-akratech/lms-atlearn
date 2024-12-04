@@ -1,11 +1,7 @@
-# Ignore config.php
-config.php
-
 # Ignore user data directories
 /dataroot/
 
 # Ignore cache and session data
-/cache/
 /localcache/
 /sessions/
 /temp/
