@@ -2,9 +2,9 @@
 /dataroot/
 
 # Ignore cache and session data
-/localcache/
-/sessions/
-/temp/
+localcache
+sessions
+temp
 /upgradelogs/
 
 # Ignore external libraries (if you're using Composer)
