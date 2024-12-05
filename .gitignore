@@ -2,11 +2,12 @@
 /dataroot/
 
 # Ignore cache and session data
-moodledata
-localcache
-sessions
-temp
-/upgradelogs/
+moodledata/
+localcache/
+sessions/
+temp/
+trashdir/
+
 
 # Ignore external libraries (if you're using Composer)
 /vendor/
@@ -17,7 +18,6 @@ temp
 
 # Ignore backups
 *.mbz
-/backup/
 
 # Ignore any personal notes or temp files
 *.swp
