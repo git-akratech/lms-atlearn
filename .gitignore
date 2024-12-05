@@ -2,6 +2,7 @@
 /dataroot/
 
 # Ignore cache and session data
+moodledata
 localcache
 sessions
 temp
