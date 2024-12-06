@@ -903,6 +903,12 @@
       'selectedsharingoption' => 2,
       'userinputsharingkey' => '',
     ),
+    'qtype_wq/images' => 
+    array (
+      'mode' => 1,
+      'component' => 'qtype_wq',
+      'area' => 'images',
+    ),
     'mod_assign/overrides' => 
     array (
       'mode' => 1,
@@ -1070,6 +1076,18 @@
       'area' => 'serverversions',
       'selectedsharingoption' => 2,
       'userinputsharingkey' => '',
+    ),
+    'filter_wiris/images' => 
+    array (
+      'mode' => 1,
+      'component' => 'filter_wiris',
+      'area' => 'images',
+    ),
+    'filter_wiris/formulas' => 
+    array (
+      'mode' => 1,
+      'component' => 'filter_wiris',
+      'area' => 'formulas',
     ),
     'repository_googledocs/folder' => 
     array (
