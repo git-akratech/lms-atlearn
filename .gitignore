@@ -11,8 +11,6 @@ trashdir/
 
 # Ignore external libraries (if you're using Composer)
 /vendor/
-wiris/
-wq/
 # Ignore log files
 /error.log
 /access.log
