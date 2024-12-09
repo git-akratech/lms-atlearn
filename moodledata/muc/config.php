@@ -903,6 +903,20 @@
       'selectedsharingoption' => 2,
       'userinputsharingkey' => '',
     ),
+    'qtype_coderunner/coderunner_grading_cache' => 
+    array (
+      'mode' => 1,
+      'maxsize' => 50000000,
+      'simplekeys' => true,
+      'simpledata' => false,
+      'canuselocalstore' => true,
+      'staticacceleration' => true,
+      'staticaccelerationsize' => 1000000,
+      'component' => 'qtype_coderunner',
+      'area' => 'coderunner_grading_cache',
+      'selectedsharingoption' => 2,
+      'userinputsharingkey' => '',
+    ),
     'mod_assign/overrides' => 
     array (
       'mode' => 1,
