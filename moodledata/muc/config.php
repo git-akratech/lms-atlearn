@@ -1220,6 +1220,33 @@
       'selectedsharingoption' => 2,
       'userinputsharingkey' => '',
     ),
+    'local_kopere_dashboard/performancemonitor_cache' => 
+    array (
+      'mode' => 1,
+      'ttl' => 600,
+      'component' => 'local_kopere_dashboard',
+      'area' => 'performancemonitor_cache',
+      'selectedsharingoption' => 2,
+      'userinputsharingkey' => '',
+    ),
+    'local_kopere_dashboard/report_getdata_cache' => 
+    array (
+      'mode' => 1,
+      'ttl' => 172800,
+      'component' => 'local_kopere_dashboard',
+      'area' => 'report_getdata_cache',
+      'selectedsharingoption' => 2,
+      'userinputsharingkey' => '',
+    ),
+    'local_kopere_dashboard/courses_all_courses' => 
+    array (
+      'mode' => 1,
+      'ttl' => 86400,
+      'component' => 'local_kopere_dashboard',
+      'area' => 'courses_all_courses',
+      'selectedsharingoption' => 2,
+      'userinputsharingkey' => '',
+    ),
     'quizaccess_seb/quizsettings' => 
     array (
       'mode' => 1,
