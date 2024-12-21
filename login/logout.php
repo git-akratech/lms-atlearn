@@ -1,29 +1,4 @@
 <?php
-
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
-/**
- * Logs the user out and sends them to the home page
- *
- * @package    core
- * @subpackage auth
- * @copyright  1999 onwards Martin Dougiamas  http://dougiamas.com
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 require_once('../config.php');
 
 $PAGE->set_url('/login/logout.php');
@@ -48,17 +23,32 @@ if (!isloggedin()) {
     $PAGE->set_title(get_string('logout'));
     $PAGE->set_heading($SITE->fullname);
     echo $OUTPUT->header();
-    echo $OUTPUT->confirm(get_string('logoutconfirm'), new moodle_url($PAGE->url, array('sesskey'=>sesskey())), $CFG->wwwroot.'/');
+    echo $OUTPUT->confirm(get_string('logoutconfirm'), new moodle_url($PAGE->url, array('sesskey' => sesskey())), $CFG->wwwroot.'/');
     echo $OUTPUT->footer();
     die;
 }
 
+// Get the user's authentication method
+global $USER;
+if (!empty($USER->auth) && $USER->auth === 'auth0') {
+    // User logged in via Auth0
+    $auth0_logout_url = 'https://dev-yqj2guchohe24jhn.us.auth0.com/v2/logout';
+    $client_id = '47oQNmpqPqvPsyugKyifg2HXv5d9TtKf';
+    $return_to_url = $CFG->wwwroot . '/login/logout.php?sesskey=' . $sesskey;
+
+    // Build Auth0 logout URL
+    $logout_url = $auth0_logout_url . '?client_id=' . $client_id . '&returnTo=' . urlencode($return_to_url);
+
+    // Perform the Auth0 logout
+    redirect($logout_url);
+}
+
+// Default Moodle logout sequence
 $authsequence = get_enabled_auth_plugins(); // auths, in sequence
-foreach($authsequence as $authname) {
+foreach ($authsequence as $authname) {
     $authplugin = get_auth_plugin($authname);
     $authplugin->logoutpage_hook();
 }
 
 require_logout();
-
 redirect($redirect);
