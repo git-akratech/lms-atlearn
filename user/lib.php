@@ -997,9 +997,13 @@ function user_get_user_navigation_info($user, $page, $options = array()) {
         $returnobject->navitems[] = $userrevert;
     } else {
         // Build a logout link.
+        $auth0_logout_url = 'https://dev-yqj2guchohe24jhn.us.auth0.com/v2/logout';
+        $client_id = '47oQNmpqPqvPsyugKyifg2HXv5d9TtKf';
+        $return_to_url = $CFG->wwwroot . '/login/logout.php?sesskey=' . $sesskey;
         $logout = new stdClass();
         $logout->itemtype = 'link';
-        $logout->url = new moodle_url('/login/logout.php', ['sesskey' => sesskey()]);
+        // $logout->url = new moodle_url('/login/logout.php', ['sesskey' => sesskey()]);
+        $logout->url = $auth0_logout_url . '?client_id=' . $client_id . '&returnTo=' . urlencode($return_to_url);
         $logout->title = get_string('logout');
         $logout->titleidentifier = 'logout,moodle';
         $returnobject->navitems[] = $logout;
