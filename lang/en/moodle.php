@@ -240,6 +240,7 @@ $string['calltofeedback'] = 'The creators of this software would like your feedb
 $string['calltofeedback_give'] = 'Give feedback about this software';
 $string['calltofeedback_remind'] = 'Remind me later';
 $string['cancel'] = 'Cancel';
+$string['generateaiquestion'] = 'Generate AI Question';
 $string['cancelled'] = 'Cancelled';
 $string['categories'] = 'Course categories';
 $string['categoriesandcourses'] = 'Course categories and courses';
