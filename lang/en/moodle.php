@@ -664,9 +664,7 @@ If you need help, please contact the site administrator,
 {$a->admin}';
 $string['emailconfirmationresend'] = 'Resend confirmation email';
 $string['emailconfirmationsubject'] = '{$a}: account confirmation';
-$string['emailconfirmsent'] = '<p>An email should have been sent to your address at <b>{$a}</b></p>
-   <p>It contains easy instructions to complete your registration.</p>
-   <p>If you continue to have difficulty, contact the site administrator.</p>';
+$string['emailconfirmsent'] = '<p>Your <b>{$a}</b> account is currently pending confirmation from the admin,you will be notified as soon as it confirmed.</p>';
 $string['emailconfirmsentfailure'] = 'Confirmation email failed to send';
 $string['emailconfirmsentsuccess'] = 'Confirmation email sent successfully';
 $string['emaildigest'] = 'Email digest type';
