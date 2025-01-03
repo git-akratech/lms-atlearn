@@ -46,7 +46,7 @@ If you did not do this, someone else could be trying to compromise your account.
 Please contact the site administrator immediately.';
 $string['confirmaccountemailsubject'] = '{$a}: account confirmation';
 $string['confirmationinvalid'] = 'The confirmation link is either invalid, or has expired. Please start the login process again to generate a new confirmation email.';
-$string['confirmationpending'] = 'Your account is currently pending confirmation from the admin. Please try logging in once the admin has confirmed.';
+$string['confirmationpending'] = 'Your account is currently awaiting approval from the admin. Once the admin confirms, a confirmation link will be sent to your email.';
 $string['confirmlinkedloginemail'] = 'Hi {$a->firstname},
 
 A request has been made to link the {$a->issuername} login
