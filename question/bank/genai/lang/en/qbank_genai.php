@@ -43,3 +43,6 @@ $string['pluginname'] = 'Generative AI Question Bank';
 $string['privacy:metadata'] = 'The GenAI question bank plugin does not store any personal data.';
 
 $string['title'] = 'Generate questions';
+
+$string['newllmapikey'] = 'New LLM API Key';
+$string['newllmapikeydesc'] = 'Enter the API key for the new LLM.';

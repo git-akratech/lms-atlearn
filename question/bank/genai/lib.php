@@ -303,3 +303,37 @@ function qbank_genai_add_description(string $name, string $text, stdClass $categ
     // Commit the transaction.
     $transaction->allow_commit();
 }
+function call_new_llm_api(string $api_key, string $input) {
+    $url = 'https://api.newllm.com/generate';
+    $data = [
+        'key' => $api_key,
+        'input' => $input,
+    ];
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    return json_decode($response, true);
+}
+/**
+ * Generate questions using the selected AI model.
+ *
+ * @param string $selected_model The AI model selected.
+ * @param string $input The input for the AI model.
+ * @return mixed The response from the AI model.
+ */
+function qbank_genai_generate_questions(string $selected_model, string $input) {
+    if ($selected_model == 'openai') {
+        $api_key = get_config('pluginname', 'openai_api_key');
+        return call_openai_api($api_key, $input);
+    } elseif ($selected_model == 'new_llm') {
+        $api_key = get_config('pluginname', 'new_llm_api_key');
+        return call_new_llm_api($api_key, $input);
+    }
+
+    // Handle other models or default case.
+    throw new moodle_exception('unknown_model', 'qbank_genai', '', $selected_model);
+}
+

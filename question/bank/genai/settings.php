@@ -42,5 +42,12 @@ if ($hassiteconfig) {
             new lang_string('assistantiddesc', 'qbank_genai'),
             '',
         ));
+        $settings->add(new admin_setting_configtext(
+            'qbank_genai/newllmapikey',
+            get_string('newllmapikey', 'qbank_genai'),
+            get_string('newllmapikeydesc', 'qbank_genai'),
+            '',
+        ));
+        
     }
 }
