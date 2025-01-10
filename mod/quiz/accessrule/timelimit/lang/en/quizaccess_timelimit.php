@@ -39,6 +39,6 @@ $string['quiztimelimit'] = 'Time limit: {$a}
 <p><b>Webcam Requirement:</b> The webcam must be turned on to take the test. Without it, access will be denied.</p>
 <p><b>Eye-Tracking Enabled:</b> The system uses eye-sensitive detection. Ensure you remain focused on the screen throughout the test.</p>
 <p><b>Tab Restrictions:</b> Switching to another tab is prohibited and will trigger a warning.</p>
-<p><b>Warning Limit:</b> You are allowed up to 15 warnings. Exceeding this limit will result in the test being automatically closed, and you will not be able to continue.</p>
+<p><b>Warning Limit:</b> You are allowed up to 10 warnings. Exceeding this limit will result in the test being automatically closed, and you will not be able to continue.</p>
 <p><b>Support:</b> If you encounter any issues, please contact us immediately.</p>
 <p>Good luck with your test!</p>';
