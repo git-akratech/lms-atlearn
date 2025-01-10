@@ -468,17 +468,7 @@ $string['gradingdetails'] = 'Marks for this submission: {$a->raw}/{$a->max}.';
 $string['gradingdetailsadjustment'] = 'With previous penalties this gives <strong>{$a->cur}/{$a->max}</strong>.';
 $string['gradingdetailspenalty'] = 'This submission attracted a penalty of {$a}.';
 $string['gradingdetailszeropenalty'] = 'You were not penalized for this submission.';
-$string['gradingmethod'] = 'Grading method: {$a}
-<p><b>Rules for Taking the Test</b></p>
-
-<p><b>Single Attempt Only:</b> You are allowed only one attempt at the test.</p>
-<p><b>Proper Lighting:</b> Sit in a well-lit area to ensure your webcam is properly detected.</p>
-<p><b>Webcam Requirement:</b> The webcam must be turned on to take the test. Without it, access will be denied.</p>
-<p><b>Eye-Tracking Enabled:</b> The system uses eye-sensitive detection. Ensure you remain focused on the screen throughout the test.</p>
-<p><b>Tab Restrictions:</b> Switching to another tab is prohibited and will trigger a warning.</p>
-<p><b>Warning Limit:</b> You are allowed up to 15 warnings. Exceeding this limit will result in the test being automatically closed, and you will not be able to continue.</p>
-<p><b>Support:</b> If you encounter any issues, please contact us immediately.</p>
-<p>Good luck with your test!</p>';
+$string['gradingmethod'] = 'Grading method: {$a}';
 $string['groupoverrides'] = 'Group overrides';
 $string['groupsnone'] = 'No groups you can access.';
 $string['guestsno'] = 'Sorry, guests cannot see or attempt quizzes';
