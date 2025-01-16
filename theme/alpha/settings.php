@@ -67,3 +67,23 @@ if ($ADMIN->fulltree) {
     require('settings/block22.php');
     require('settings/block23.php');
 }
+// Add role settings for custom items
+$page = new admin_settingpage('theme_alpha_customitems', get_string('customitems', 'theme_alpha'));
+
+// Custom Item 1 Roles
+$name = 'theme_alpha/customitem1roles';
+$title = get_string('customitem1roles', 'theme_alpha');
+$description = get_string('customitem1roles_desc', 'theme_alpha');
+$default = 'manager,coursecreator,editingteacher,teacher';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$page->add($setting);
+
+// Custom Item 3 Roles
+$name = 'theme_alpha/customitem3roles';
+$title = get_string('customitem3roles', 'theme_alpha');
+$description = get_string('customitem3roles_desc', 'theme_alpha');
+$default = 'manager,coursecreator,editingteacher';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$page->add($setting);
+
+$settings->add($page);

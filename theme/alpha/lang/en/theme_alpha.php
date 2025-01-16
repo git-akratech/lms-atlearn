@@ -1439,3 +1439,9 @@ $string['forcefwvideo_desc'] = 'Turn off this option to revert to the default Mo
 
 $string['mycoursesontop'] = 'Display "My Courses Area" before Main Navigation';
 $string['mycoursesontop_desc'] = 'Turn off this option to display the "My Courses" area after the Main Navigation.';
+$string['userlist'] = 'User List';
+$string['searchusers'] = 'Search users...';
+$string['nousers'] = 'No users found';
+$string['users_per_page'] = 'Users per page';
+$string['nopermissions'] = 'You do not have permission to view this page';
+$string['viewuserlist'] = 'View user list';

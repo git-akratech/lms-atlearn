@@ -259,3 +259,5 @@ if ($THEME->settings->hidecourseindexnav == 0) {
 } else {
     $THEME->usescourseindex = false;
 }
+$THEME->sheets = array('custom/user_list');
+$THEME->javascripts = array('user_list');

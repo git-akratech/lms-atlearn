@@ -1,0 +1,31 @@
+<div class="user-list-container">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="user-list-header bg-primary text-white">
+                <tr>
+                    <th class="header {{#id_sorted}}sorted-{{direction}}{{/id_sorted}}" 
+                        data-sort="id">
+                        ID {{#id_sorted}}{{#str}}sorted_{{direction}}{{/str}}{{/id_sorted}}
+                    </th>
+                    <th>{{#str}}name{{/str}}</th>
+                    <th>{{#str}}username{{/str}}</th>
+                    <th>{{#str}}email{{/str}}</th>
+                    <th>{{#str}}phone{{/str}}</th>
+                    <th>{{#str}}city{{/str}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#users}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{fullname}}</td>
+                    <td>{{username}}</td>
+                    <td>{{email}}</td>
+                    <td>{{phone}}</td>
+                    <td>{{city}}</td>
+                </tr>
+                {{/users}}
+            </tbody>
+        </table>
+    </div>
+</div>
