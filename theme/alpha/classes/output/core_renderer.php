@@ -791,7 +791,7 @@ class core_renderer extends \core_renderer {
         } else {
             $roleid = 99;
         }
-        // End.
+        // End.$rolenames = array();
 
         if (
             $this->page->include_region_main_settings_in_header_actions() &&
@@ -1123,6 +1123,21 @@ class core_renderer extends \core_renderer {
                 $urlcustomitem5 = $theme->settings->urlcustomitem5;
             }
         }
+                    // First, get the user's roles
+            $context = context_system::instance();
+            $userroles = get_user_roles($context, $USER->id);
+            $rolenames = array();
+            foreach ($userroles as $role) {
+            $rolenames[] = $role->shortname;
+            }
+
+            // Define which roles can see which items
+            $customitem1_allowed_roles = array('manager', 'coursecreator', 'editingteacher', 'teacher');
+            $customitem3_allowed_roles = array('manager', 'coursecreator', 'editingteacher');
+
+            // Check if user has any of the allowed roles
+            $can_see_customitem1 = array_intersect($rolenames, $customitem1_allowed_roles);
+            $can_see_customitem3 = array_intersect($rolenames, $customitem3_allowed_roles);
 
             $headerlinks = array(
                 "0" => array(
@@ -1325,7 +1340,7 @@ class core_renderer extends \core_renderer {
                 ),
                 "6" => array(
                     'position' => $poscustomitem1,
-                    'status' => $iscustomitem1on,
+                    'status' => $iscustomitem1on && $can_see_customitem1,
                     'icon' => $iconcustomitem1,
                     'title' => $labelcustomitem1,
                     'url' => new moodle_url($urlcustomitem1),
@@ -1343,7 +1358,7 @@ class core_renderer extends \core_renderer {
                 ),
                 "8" => array(
                     'position' => $poscustomitem3,
-                    'status' => $iscustomitem3on,
+                    'status' => $iscustomitem3on && $can_see_customitem3,
                     'icon' => $iconcustomitem3,
                     'title' => $labelcustomitem3,
                     'url' => new moodle_url($urlcustomitem3),
@@ -2681,5 +2696,36 @@ class core_renderer extends \core_renderer {
             }
         }
         return $html;
+    }
+    public function alpha_custom_menu_items() {
+        global $CFG, $USER, $PAGE;
+        
+        $theme = theme_config::load('alpha');
+        $context = context_system::instance();
+    
+        // Get user roles
+        $userroles = get_user_roles($context, $USER->id);
+        $userrolenames = array();
+        foreach ($userroles as $role) {
+            $userrolenames[] = $role->shortname;
+        }
+    
+        // Define URL for user list
+        $urlcustomitem1 = new moodle_url('/theme/alpha/users.php');
+    
+        $headerlinks = array(
+            "6" => array(
+                'position' => 1,
+                'status' => true,
+                'icon' => 'fa-users',
+                'title' => get_string('userlist', 'theme_alpha'),
+                'url' => $urlcustomitem1,
+                'isactiveitem' => $this->ismenuactive('/theme/alpha/users.php'),
+                'itemid' => 'itemCustomItem1',
+            ),
+            // ... other menu items ...
+        );
+    
+        return $this->render_from_template('theme_alpha/custom_menu_items', array('headerlinks' => $headerlinks));
     }
 }

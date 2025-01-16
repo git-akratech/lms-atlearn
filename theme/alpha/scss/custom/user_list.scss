@@ -1,0 +1,17 @@
+.user-list-container {
+    .table {
+        .user-list-header {
+            background-color: #0f6cbf !important; // Primary blue color
+            th {
+                color: #ffffff !important;
+                font-weight: 500;
+                border-bottom: none;
+                padding: 12px 15px;
+                
+                &.header {
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
+}
