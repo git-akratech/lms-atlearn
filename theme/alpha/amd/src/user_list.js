@@ -1,39 +1,34 @@
 define(['jquery', 'core/ajax', 'core/templates'], function($, Ajax, Templates) {
     return {
         init: function() {
-            // Search functionality
             let searchTimeout;
+            
+            // Real-time search with debounce
             $('#searchUsers').on('input', function() {
                 clearTimeout(searchTimeout);
                 const searchTerm = $(this).val();
                 
                 searchTimeout = setTimeout(() => {
-                    updateUserList({ search: searchTerm });
+                    const currentUrl = new URL(window.location.href);
+                    currentUrl.searchParams.set('search', searchTerm);
+                    currentUrl.searchParams.set('page', '0'); // Reset to first page on search
+                    window.location.href = currentUrl.toString();
                 }, 500);
             });
 
-            // Sorting functionality
-            $('.sortable').on('click', function() {
+            // Sort functionality
+            $('.user-list-header th[data-sort]').on('click', function() {
+                const currentUrl = new URL(window.location.href);
                 const sort = $(this).data('sort');
-                const currentDirection = $(this).hasClass('sorted-asc') ? 'desc' : 'asc';
-                updateUserList({ sort: sort, direction: currentDirection });
+                const currentDirection = currentUrl.searchParams.get('direction') || 'ASC';
+                const newDirection = currentDirection === 'ASC' ? 'DESC' : 'ASC';
+                
+                currentUrl.searchParams.set('sort', sort);
+                currentUrl.searchParams.set('direction', newDirection);
+                currentUrl.searchParams.set('page', '0'); // Reset to first page on sort change
+                
+                window.location.href = currentUrl.toString();
             });
-
-            function updateUserList(params = {}) {
-                const currentParams = new URLSearchParams(window.location.search);
-                
-                // Merge current parameters with new ones
-                for (let key in params) {
-                    currentParams.set(key, params[key]);
-                }
-                
-                // Reset page when sorting or searching
-                if (params.sort || params.search) {
-                    currentParams.set('page', 0);
-                }
-
-                window.location.search = currentParams.toString();
-            }
         }
     };
 });
