@@ -1,16 +1,16 @@
-<div class="user-list-container">
+<div class="student-list-container">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3>{{#str}}userlist, theme_alpha{{/str}}</h3>
+        <h3>{{#str}}studentlist, theme_alpha{{/str}}</h3>
         <div class="d-flex align-items-center">
             <div class="search-box mr-3">
-                <form class="user-search-form" action="" method="get">
+                <form class="student-search-form" action="" method="get">
                     <div class="input-group">
                         <input type="text" 
                                class="form-control" 
-                               id="searchUsers" 
+                               id="searchStudents" 
                                name="search" 
                                value="{{search}}" 
-                               placeholder="{{#str}}searchusers, theme_alpha{{/str}}">
+                               placeholder="{{#str}}searchstudents, theme_alpha{{/str}}">
                         <input type="hidden" name="sort" value="{{sort}}">
                         <input type="hidden" name="direction" value="{{direction}}">
                         <div class="input-group-append">
@@ -22,18 +22,18 @@
                 </form>
             </div>
             <div class="showing-info">
-                {{#str}}showing, theme_alpha{{/str}} {{showing_start}}-{{showing_end}} {{#str}}of, theme_alpha{{/str}} {{total_users}} {{#str}}users, theme_alpha{{/str}}
+                {{#str}}showing, theme_alpha{{/str}} {{showing_start}}-{{showing_end}} 
+                {{#str}}of, theme_alpha{{/str}} {{total_students}} {{#str}}students, theme_alpha{{/str}}
             </div>
         </div>
     </div>
 
     <div class="table-responsive">
         <table class="table table-striped">
-            <thead class="user-list-header">
+            <thead class="student-list-header">
                 <tr>
-                    <th class="{{#id_sorted}}sorted-{{direction}}{{/id_sorted}}" 
-                        data-sort="id">
-                        ID {{#id_sorted}}{{#str}}sorted_{{direction}}{{/str}}{{/id_sorted}}
+                    <th class="{{#id_sorted}}sorted-{{direction}}{{/id_sorted}}" data-sort="id">
+                        ID
                     </th>
                     <th>{{#str}}name{{/str}}</th>
                     <th>{{#str}}username{{/str}}</th>
@@ -43,7 +43,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{#users}}
+                {{#students}}
                 <tr>
                     <td>{{id}}</td>
                     <td>{{fullname}}</td>
@@ -52,19 +52,13 @@
                     <td>{{phone}}</td>
                     <td>{{city}}</td>
                 </tr>
-                {{/users}}
+                {{/students}}
             </tbody>
         </table>
     </div>
 
-    {{^users}}
-    <div class="alert alert-info">
-        {{#str}}nouserfound, theme_alpha{{/str}}
-    </div>
-    {{/users}}
-
     {{#pagination}}
-    <nav aria-label="User list pagination" class="pagination-container mt-4">
+    <nav aria-label="Student list pagination" class="pagination-container mt-4">
         <ul class="pagination justify-content-center">
             {{#previousurl}}
             <li class="page-item">
