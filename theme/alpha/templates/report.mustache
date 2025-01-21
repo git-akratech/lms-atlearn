@@ -1,0 +1,32 @@
+{{> theme_boost/head }}
+
+<body {{{ bodyattributes }}}>
+{{> core/local/toast/wrapper}}
+
+<div id="page-wrapper" class="d-print-block">
+    {{{ output.standard_top_of_body_html }}}
+    
+    {{> theme_boost/navbar }}
+    {{#secondarymoremenu}}
+        {{> theme_boost/nav-tabs }}
+    {{/secondarymoremenu}}
+
+    <div id="page" class="container-fluid">
+        <div id="page-content" class="row">
+            <div id="region-main-box" class="col-12">
+                <section id="region-main">
+                    <div class="card">
+                        <div class="card-body">
+                            {{{ output.main_content }}}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    {{> theme_boost/footer }}
+</div>
+
+</body>
+</html>

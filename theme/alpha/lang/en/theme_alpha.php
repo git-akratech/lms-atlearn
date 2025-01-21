@@ -1468,23 +1468,17 @@ $string['showing'] = 'Showing';
 $string['of'] = 'of';
 $string['nostudentsfound'] = 'No students found';
 $string['error'] = 'An error occurred';
-// Reports strings
-// Report strings
+// Reports
 $string['reports'] = 'Reports';
-$string['overview'] = 'Overview';
-$string['progresscompletion'] = 'Progress Completion';
-$string['courseswithgroups'] = 'Courses with Groups';
-$string['courseaccess'] = 'Course Access';
-$string['courseaccessgrades'] = 'Course Access Grades';
-$string['cohortsandusers'] = 'Cohorts and Users';
-$string['diskusage'] = 'Disk Usage';
-$string['guestlogins'] = 'Guest Logins';
-$string['invalidreport'] = 'Invalid report type';
-$string['report_overview'] = 'Overview Report';
-$string['report_progress_completion'] = 'Progress Completion Report';
-$string['report_courses_groups'] = 'Courses with Groups Report';
-$string['report_course_access'] = 'Course Access Report';
-$string['report_course_access_grades'] = 'Course Access Grades Report';
-$string['report_cohorts_users'] = 'Cohorts and Users Report';
-$string['report_disk_usage'] = 'Disk Usage Report';
-$string['report_guest_logins'] = 'Guest Logins Report';
+$string['coursecompletion'] = 'Course Completion';
+$string['enrolled'] = 'Enrolled Users';
+$string['completed'] = 'Completed';
+$string['completion'] = 'Completion';
+$string['searchcourses'] = 'Search courses...';
+$string['noresults'] = 'No results found';
+$string['errorgetreport'] = 'Error retrieving report data';
+$string['showing'] = 'Showing';
+$string['of'] = 'of';
+$string['pagination'] = 'Page navigation';
+$string['previous'] = 'Previous';
+$string['next'] = 'Next';

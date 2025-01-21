@@ -235,6 +235,11 @@ $THEME->layouts = [
             'side-pre'
         ),
         'defaultregion' => 'side-pre'
+    ),
+    'report' => array(
+        'file' => 'report.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
     )
 ];
 

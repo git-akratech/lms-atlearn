@@ -2698,40 +2698,34 @@ class core_renderer extends \core_renderer {
         return $html;
     }
     public function alpha_custom_menu_items() {
-        global $USER, $DB;
+        global $CFG, $USER, $PAGE;
         
+        $theme = theme_config::load('alpha');
         $context = context_system::instance();
-        $isadmin = has_capability('moodle/site:config', $context);
-        $isteacher = false;
-        
-        // Check if user is a teacher in any course
-        $courses = enrol_get_users_courses($USER->id);
-        foreach ($courses as $course) {
-            $coursecontext = context_course::instance($course->id);
-            if (has_capability('moodle/course:viewhiddenactivities', $coursecontext)) {
-                $isteacher = true;
-                break;
-            }
+    
+        // Get user roles
+        $userroles = get_user_roles($context, $USER->id);
+        $userrolenames = array();
+        foreach ($userroles as $role) {
+            $userrolenames[] = $role->shortname;
         }
     
-        $headerlinks = array();
-        
-        // Add Students link for teachers and admins
-        if ($isadmin || $isteacher) {
-            $headerlinks[] = array(
+        // Define URL for user list
+        $urlcustomitem1 = new moodle_url('/theme/alpha/users.php');
+    
+        $headerlinks = array(
+            "6" => array(
                 'position' => 1,
                 'status' => true,
                 'icon' => 'fa-users',
-                'title' => get_string('students', 'theme_alpha'),
-                'url' => new moodle_url('/theme/alpha/students.php'),
-                'isactiveitem' => $this->ismenuactive('/theme/alpha/students.php'),
-                'itemid' => 'itemStudents',
-            );
-        }
-    
-        return $this->render_from_template('theme_alpha/custom_menu_items', 
-            array('headerlinks' => $headerlinks)
+                'title' => get_string('userlist', 'theme_alpha'),
+                'url' => $urlcustomitem1,
+                'isactiveitem' => $this->ismenuactive('/theme/alpha/users.php'),
+                'itemid' => 'itemCustomItem1',
+            ),
+            // ... other menu items ...
         );
-    }
     
+        return $this->render_from_template('theme_alpha/custom_menu_items', array('headerlinks' => $headerlinks));
+    }
 }

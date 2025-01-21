@@ -1,0 +1,19 @@
+<div class="reports-menu">
+    {{#reports}}
+        <div class="report-section mb-3">
+            <h5 class="d-flex align-items-center">
+                <i class="fa {{icon}} mr-2"></i>
+                {{title}}
+            </h5>
+            <ul class="list-unstyled ml-4">
+                {{#items}}
+                    <li class="my-2">
+                        <a href="{{url}}" class="text-decoration-none">
+                            {{title}}
+                        </a>
+                    </li>
+                {{/items}}
+            </ul>
+        </div>
+    {{/reports}}
+</div>

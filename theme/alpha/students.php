@@ -49,7 +49,7 @@ try {
     $studentrole = $DB->get_record('role', array('shortname' => 'student'), '*', MUST_EXIST);
 
     // Get students data
-    $students = \theme_alpha\util\user_data::get_students_list(
+    $students = \theme_alpha\util\user_data::get_users_list(
         $page, 
         $perpage, 
         $search, 
