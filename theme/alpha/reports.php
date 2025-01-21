@@ -31,7 +31,7 @@ $search = optional_param('search', '', PARAM_RAW);
 
 // Page setup
 $PAGE->set_context($context);
-$PAGE->set_url(new moodle_url('/theme/alpha/index.php'));
+$PAGE->set_url(new moodle_url('/theme/alpha/reports.php'));
 $PAGE->set_title(get_string('reports', 'theme_alpha'));
 $PAGE->set_heading(get_string('reports', 'theme_alpha'));
 $PAGE->set_pagelayout('standard');

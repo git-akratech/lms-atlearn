@@ -66,13 +66,15 @@ class user_data {
         
         $result = array();
         foreach ($users as $user) {
+           
             $result[] = array(
                 'id' => $user->id,
                 'fullname' => fullname($user),
                 'username' => $user->username,
                 'email' => $user->email,
-                'phone' => $user->phone1,
+                'phone' => $user->phone,
                 'city' => $user->city
+               
             );
         }
 
