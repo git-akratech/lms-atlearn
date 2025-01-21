@@ -1,16 +1,16 @@
-<div class="student-list-container">
+<div class="quiz-list-container">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3>{{#str}}studentlist, theme_alpha{{/str}}</h3>
+        <h3>{{#str}}quizlist, theme_alpha{{/str}}</h3>
         <div class="d-flex align-items-center">
             <div class="search-box mr-3">
-                <form class="student-search-form" action="" method="get">
+                <form class="quiz-search-form" action="" method="get">
                     <div class="input-group">
                         <input type="text" 
                                class="form-control" 
-                               id="searchStudents" 
+                               id="searchQuizzes" 
                                name="search" 
                                value="{{search}}" 
-                               placeholder="{{#str}}searchstudents, theme_alpha{{/str}}">
+                               placeholder="{{#str}}searchquizzes, theme_alpha{{/str}}">
                         <input type="hidden" name="sort" value="{{sort}}">
                         <input type="hidden" name="direction" value="{{direction}}">
                         <div class="input-group-append">
@@ -23,46 +23,52 @@
             </div>
             <div class="showing-info">
                 {{#str}}showing, theme_alpha{{/str}} {{showing_start}}-{{showing_end}} 
-                {{#str}}of, theme_alpha{{/str}} {{total_students}} {{#str}}students, theme_alpha{{/str}}
+                {{#str}}of, theme_alpha{{/str}} {{total_quizzes}} {{#str}}quizzes, theme_alpha{{/str}}
             </div>
         </div>
     </div>
 
     <div class="table-responsive">
         <table class="table table-striped">
-            <thead class="student-list-header">
+            <thead class="quiz-list-header">
                 <tr>
                     <th class="{{#id_sorted}}sorted-{{direction}}{{/id_sorted}}" data-sort="id">
                         ID
                     </th>
-                    <th>{{#str}}name{{/str}}</th>
-                    <th>{{#str}}username{{/str}}</th>
-                    <th>{{#str}}email{{/str}}</th>
-                    <th>{{#str}}phone{{/str}}</th>
-                    <th>{{#str}}city{{/str}}</th>
+                    <th class="{{#name_sorted}}sorted-{{direction}}{{/name_sorted}}" data-sort="name">
+                        {{#str}}quizname, theme_alpha{{/str}}
+                    </th>
+                    <th class="{{#course_sorted}}sorted-{{direction}}{{/course_sorted}}" data-sort="course">
+                        {{#str}}course{{/str}}
+                    </th>
+                    <th class="{{#timeopen_sorted}}sorted-{{direction}}{{/timeopen_sorted}}" data-sort="timeopen">
+                        {{#str}}timeopen, theme_alpha{{/str}}
+                    </th>
+                    <th class="{{#timeclose_sorted}}sorted-{{direction}}{{/timeclose_sorted}}" data-sort="timeclose">
+                        {{#str}}timeclose, theme_alpha{{/str}}
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                {{#students}}
+                {{#quizzes}}
                 <tr>
                     <td>{{id}}</td>
-                    <td>{{fullname}}</td>
-                     <td>
-                        <a href="{{config.wwwroot}}/user/profile.php?id={{id}}" class="user-profile-link">
-                            {{username}}
-                        </a>
+                    <td>
+                        <a href="{{quizurl}}">{{name}}</a>
                     </td>
-                    <td>{{email}}</td>
-                    <td>{{phone}}</td>
-                    <td>{{city}}</td>
+                    <td>
+                        <a href="{{courseurl}}">{{coursename}}</a>
+                    </td>
+                    <td>{{timeopen}}</td>
+                    <td>{{timeclose}}</td>
                 </tr>
-                {{/students}}
+                {{/quizzes}}
             </tbody>
         </table>
     </div>
 
     {{#pagination}}
-    <nav aria-label="Student list pagination" class="pagination-container mt-4">
+    <nav aria-label="Quiz list pagination" class="pagination-container mt-4">
         <ul class="pagination justify-content-center">
             {{#previousurl}}
             <li class="page-item">
