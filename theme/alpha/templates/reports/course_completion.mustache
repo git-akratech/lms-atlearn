@@ -1,0 +1,65 @@
+<div class="report-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>{{#str}}coursecompletion, theme_alpha{{/str}}</h3>
+        <div class="search-box">
+            <form class="report-search-form" action="" method="get">
+                <div class="input-group">
+                    <input type="text" 
+                           class="form-control" 
+                           name="search" 
+                           value="{{search}}" 
+                           placeholder="{{#str}}searchcourses, theme_alpha{{/str}}">
+                    <input type="hidden" name="report" value="course_completion">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {{#data}}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{{#str}}course{{/str}}</th>
+                        <th>{{#str}}enrolled, theme_alpha{{/str}}</th>
+                        <th>{{#str}}completed, theme_alpha{{/str}}</th>
+                        <th>{{#str}}completion, theme_alpha{{/str}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#items}}
+                        <tr>
+                            <td>{{fullname}}</td>
+                            <td>{{total_enrolled}}</td>
+                            <td>{{total_completions}}</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" 
+                                         style="width: {{completion_percentage}}%" 
+                                         aria-valuenow="{{completion_percentage}}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="100">
+                                        {{completion_percentage}}%
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/items}}
+                </tbody>
+            </table>
+        </div>
+        
+        {{> theme_alpha/pagination}}
+    {{/data}}
+    
+    {{^data}}
+        <div class="alert alert-info">
+            {{#str}}noresults, theme_alpha{{/str}}
+        </div>
+    {{/data}}
+</div>

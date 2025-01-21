@@ -786,3 +786,84 @@ function theme_alpha_serve_hvp_css($filename, $theme) {
 
     die;
 }
+function theme_alpha_get_course_completion_data($search = '', $page = 0, $perpage = 10) {
+    global $DB;
+
+    $params = array();
+    $where = array("c.visible = 1");
+    
+    if (!empty($search)) {
+        $where[] = $DB->sql_like('c.fullname', ':search', false);
+        $params['search'] = '%' . $DB->sql_like_escape($search) . '%';
+    }
+
+    $wheresql = implode(" AND ", $where);
+    
+    $sql = "SELECT c.id, c.fullname, c.shortname,
+                   COUNT(DISTINCT cc.id) as completions,
+                   COUNT(DISTINCT e.userid) as enrolled
+            FROM {course} c
+            LEFT JOIN {course_completions} cc ON c.id = cc.course
+            LEFT JOIN {enrol} e ON c.id = e.courseid
+            LEFT JOIN {user_enrolments} ue ON e.id = ue.enrolid
+            WHERE $wheresql
+            GROUP BY c.id, c.fullname, c.shortname
+            ORDER BY c.fullname ASC";
+
+    $total = $DB->count_records_sql("SELECT COUNT(*) FROM ({$sql}) temp", $params);
+    $courses = $DB->get_records_sql($sql, $params, $page * $perpage, $perpage);
+
+    $data = array();
+    foreach ($courses as $course) {
+        $data[] = array(
+            'id' => $course->id,
+            'fullname' => $course->fullname,
+            'shortname' => $course->shortname,
+            'enrolled' => $course->enrolled,
+            'completions' => $course->completions,
+            'percentage' => $course->enrolled > 0 ? 
+                round(($course->completions / $course->enrolled) * 100, 1) : 0
+        );
+    }
+
+    return array(
+        'data' => $data,
+        'total' => $total
+    );
+}
+/**
+ * Generate pagination page list
+ */
+function theme_alpha_generate_page_list($currentpage, $totalpages, $baseurl, $maxdisplay = 5) {
+    $pages = array();
+    
+    if ($totalpages <= 1) {
+        return $pages;
+    }
+    
+    // Calculate start and end pages to display
+    $startpage = max(0, $currentpage - floor($maxdisplay / 2));
+    $endpage = min($totalpages - 1, $startpage + $maxdisplay - 1);
+    
+    // Adjust start page if we're near the end
+    if ($endpage - $startpage + 1 < $maxdisplay) {
+        $startpage = max(0, $endpage - $maxdisplay + 1);
+    }
+    
+    // Generate page list
+    for ($i = $startpage; $i <= $endpage; $i++) {
+        $url = new moodle_url($baseurl);
+        $url->param('page', $i);
+        if ($baseurl->get_param('search')) {
+            $url->param('search', $baseurl->get_param('search'));
+        }
+        
+        $pages[] = [
+            'page' => $i + 1,
+            'url' => $url->out(false),
+            'isactive' => ($i == $currentpage)
+        ];
+    }
+    
+    return $pages;
+}

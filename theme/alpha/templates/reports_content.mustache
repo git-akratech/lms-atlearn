@@ -1,0 +1,121 @@
+<div class="reports-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="report-tabs">
+            {{#reports}}
+                <a href="?report={{type}}" class="btn btn-secondary {{#active}}active{{/active}}">
+                    {{name}}
+                </a>
+            {{/reports}}
+        </div>
+        
+        <div class="search-box">
+            <form action="" method="get" class="d-flex">
+                <input type="hidden" name="report" value="{{report}}">
+                <input type="text" 
+                       name="search" 
+                       value="{{search}}" 
+                       class="form-control mr-2" 
+                       placeholder="{{#str}}searchcourses, theme_alpha{{/str}}">
+                <button type="submit" class="btn btn-primary">
+                    {{#str}}search{{/str}}
+                </button>
+            </form>
+        </div>
+    </div>
+
+    {{#reportdata}}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{{#str}}course{{/str}}</th>
+                        <th>{{#str}}enrolled, theme_alpha{{/str}}</th>
+                        <th>{{#str}}completed, theme_alpha{{/str}}</th>
+                        <th>{{#str}}completion, theme_alpha{{/str}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#.}}
+                        <tr>
+                            <td>{{fullname}}</td>
+                            <td>{{enrolled}}</td>
+                            <td>{{completions}}</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" 
+                                         style="width: {{percentage}}%" 
+                                         aria-valuenow="{{percentage}}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="100">
+                                        {{percentage}}%
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/.}}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="d-flex justify-content-between align-items-center mt-3">
+            <div class="showing-info">
+                {{#str}}showing, theme_alpha{{/str}} {{showing_start}}-{{showing_end}} 
+                {{#str}}of, theme_alpha{{/str}} {{total}}
+            </div>
+
+            <nav aria-label="{{#str}}pagination, theme_alpha{{/str}}">
+            <ul class="pagination mb-0">
+                {{#pagination.previousurl}}
+                    <li class="page-item">
+                        <a class="page-link" href="{{{.}}}" aria-label="{{#str}}previous{{/str}}">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {{/pagination.previousurl}}
+                {{^pagination.previousurl}}
+                    <li class="page-item disabled">
+                        <span class="page-link">&laquo;</span>
+                    </li>
+                {{/pagination.previousurl}}
+                
+                {{#pagination}}
+                    {{! Show page numbers }}
+                    {{#pagelist}}
+                        {{#isactive}}
+                            <li class="page-item active">
+                                <span class="page-link">{{page}}</span>
+                            </li>
+                        {{/isactive}}
+                        {{^isactive}}
+                            <li class="page-item">
+                                <a class="page-link" href="{{{url}}}">{{page}}</a>
+                            </li>
+                        {{/isactive}}
+                    {{/pagelist}}
+                {{/pagination}}
+                
+                {{#pagination.nexturl}}
+                    <li class="page-item">
+                        <a class="page-link" href="{{{.}}}" aria-label="{{#str}}next{{/str}}">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {{/pagination.nexturl}}
+                {{^pagination.nexturl}}
+                    <li class="page-item disabled">
+                        <span class="page-link">&raquo;</span>
+                    </li>
+                {{/pagination.nexturl}}
+            </ul>
+        </nav>
+
+
+        </div>
+    {{/reportdata}}
+    
+    {{^reportdata}}
+        <div class="alert alert-info">
+            {{#str}}noresults, theme_alpha{{/str}}
+        </div>
+    {{/reportdata}}
+</div>
