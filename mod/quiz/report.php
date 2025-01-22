@@ -32,7 +32,7 @@ require_once($CFG->dirroot . '/mod/quiz/report/reportlib.php');
 
 $id = optional_param('id', 0, PARAM_INT);
 $q = optional_param('q', 0, PARAM_INT);
-$mode = optional_param('mode', '', PARAM_ALPHA);
+$mode = optional_param('mode', 'overview', PARAM_ALPHA);
 
 if ($id) {
     $quizobj = quiz_settings::create_for_cmid($id);
@@ -43,37 +43,21 @@ $quiz = $quizobj->get_quiz();
 $cm = $quizobj->get_cm();
 $course = $quizobj->get_course();
 
-$url = new moodle_url('/mod/quiz/report.php', ['id' => $cm->id]);
-if ($mode !== '') {
-    $url->param('mode', $mode);
-}
-$PAGE->set_url($url);
-
 require_login($course, false, $cm);
-$PAGE->set_pagelayout('report');
-$PAGE->activityheader->disable();
-$reportlist = quiz_report_list($quizobj->get_context());
-if (empty($reportlist)) {
-    throw new \moodle_exception('erroraccessingreport', 'quiz');
-}
+$context = context_module::instance($cm->id);
+require_capability('mod/quiz:viewreports', $context);
 
-// Validate the requested report name.
-if ($mode == '') {
-    // Default to first accessible report and redirect.
-    $url->param('mode', reset($reportlist));
-    redirect($url);
-} else if (!in_array($mode, $reportlist)) {
-    throw new \moodle_exception('erroraccessingreport', 'quiz');
-}
+// Ensure the report exists
 if (!is_readable("report/$mode/report.php")) {
     throw new \moodle_exception('reportnotfound', 'quiz', '', $mode);
 }
 
-// Open the selected quiz report and display it.
+// Open the selected quiz report and display it
 $file = $CFG->dirroot . '/mod/quiz/report/' . $mode . '/report.php';
 if (is_readable($file)) {
     include_once($file);
 }
+
 $reportclassname = 'quiz_' . $mode . '_report';
 if (!class_exists($reportclassname)) {
     throw new \moodle_exception('preprocesserror', 'quiz');
@@ -82,12 +66,12 @@ if (!class_exists($reportclassname)) {
 $report = new $reportclassname();
 $report->display($quiz, $cm, $course);
 
-// Print footer.
+// Print footer
 echo $OUTPUT->footer();
 
-// Log that this report was viewed.
+// Log that this report was viewed
 $params = [
-    'context' => $quizobj->get_context(),
+    'context' => $context,
     'other' => [
         'quizid' => $quiz->id,
         'reportname' => $mode
