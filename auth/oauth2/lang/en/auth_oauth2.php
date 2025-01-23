@@ -25,48 +25,71 @@
 $string['accountexists'] = 'A user already exists on this site with this username. If this is your account, log in by entering your username and password and add it as a linked login via your preferences page.';
 $string['auth_oauth2description'] = 'OAuth 2 standards based authentication';
 $string['auth_oauth2settings'] = 'OAuth 2 authentication settings.';
-$string['confirmaccountemail'] = 'Hi {$a->firstname},
-
-A new account has been requested at \'{$a->sitename}\'
-using your email address.
-
-To confirm your new account, please go to this web address:
-
-{$a->link}
-
-In most mail programs, this should appear as a blue link
-which you can just click on.  If that doesn\'t work,
-then cut and paste the address into the address
-line at the top of your web browser window.
-
-If you need help, please contact the site administrator,
-{$a->admin}
-
-If you did not do this, someone else could be trying to compromise your account.
-Please contact the site administrator immediately.';
-$string['confirmaccountemailsubject'] = '{$a}: account confirmation';
+$string['confirmaccountemail'] = '<div style="background-color: aliceblue;padding: 10px;font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">   
+    <div style="padding: 10px;">
+        <p>Hi {$a->firstname},</p>
+        
+        <p>Welcome to \'{$a->sitename}\', your hub for innovative learning and teaching tools!</p>
+        
+        <p>To complete your registration and unlock access to your virtual classroom, please confirm your account:</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="{$a->link}" style="background-color: #4CAF50; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px;">
+                Confirm Account
+            </a>
+        </div>
+        
+        <p>Let\'s make learning easier and more effective together.</p>
+        
+        <p>Happy Learning,<br>
+        The Atlearn LMS Team</p>
+        
+        <hr style="border: 1px solid #eee; margin: 20px 0;">
+        
+        <p style="color: #666; font-size: 14px;">
+            If you need help, please contact the site administrator,<br>
+            {$a->admin}
+        </p>
+        
+        <p style="color: #666; font-size: 14px;">
+            Need help? Contact us at <a href="mailto:support@atlearn.in">support@atlearn.in</a>
+        </p>
+    </div>
+</div>';
+$string['confirmaccountemailsubject'] = 'Welcome to {$a}! Confirm Your Account';
 $string['confirmationinvalid'] = 'The confirmation link is either invalid, or has expired. Please start the login process again to generate a new confirmation email.';
 $string['confirmationpending'] = 'Your account confirmation link will be sent to your email.';
-$string['confirmlinkedloginemail'] = 'Hi {$a->firstname},
-
-A request has been made to link the {$a->issuername} login
-{$a->linkedemail} to your account at \'{$a->sitename}\'
-using your email address.
-
-To confirm this request and link these logins, please go to this web address:
-
-{$a->link}
-
-In most mail programs, this should appear as a blue link
-which you can just click on.  If that doesn\'t work,
-then cut and paste the address into the address
-line at the top of your web browser window.
-
-If you need help, please contact the site administrator,
-{$a->admin}
-
-If you did not do this, someone else could be trying to compromise your account.
-Please contact the site administrator immediately.';
+$string['confirmlinkedloginemail'] = '<div style="background-color: aliceblue;padding: 10px;font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">   
+    <div style="padding: 20px;">
+        <p>Hi {$a->firstname},</p>
+        
+        <p>Welcome to \'{$a->sitename}\', your hub for innovative learning and teaching tools!</p>
+        
+        <p>To complete your registration and unlock access to your virtual classroom, please confirm your account:</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="{$a->link}" style="background-color: #4CAF50; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px;">
+                Confirm Account
+            </a>
+        </div>
+        
+        <p>Let\'s make learning easier and more effective together.</p>
+        
+        <p>Happy Learning,<br>
+        The Atlearn LMS Team</p>
+        
+        <hr style="border: 1px solid #eee; margin: 20px 0;">
+        
+        <p style="color: #666; font-size: 14px;">
+            If you need help, please contact the site administrator,<br>
+            {$a->admin}
+        </p>
+        
+        <p style="color: #666; font-size: 14px;">
+            Need help? Contact us at <a href="mailto:support@atlearn.in">support@atlearn.in</a>
+        </p>
+    </div>
+</div>';
 $string['confirmlinkedloginemailsubject'] = '{$a}: linked login confirmation';
 $string['createaccountswarning'] = 'This authentication plugin allows users to create accounts on your site. You may want to enable the setting "authpreventaccountcreation" if you use this plugin.';
 $string['createnewlinkedlogin'] = 'Link a new account ({$a})';

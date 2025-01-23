@@ -130,8 +130,8 @@ $string['customwelcomemessage_help'] = 'Accepted formats: Plain text or Moodle-a
 <li>User last name {$a->lastname}</li>
 <li>User course role {$a->courserole}</li>
 </ul>';
-$string['welcometocourse'] = 'Welcome to {$a}';
-$string['welcometocoursetext'] = 'Welcome to {$a->coursename}!
+$string['welcometocourse'] = 'Enrollment Confirmation: {$a}';
+$string['welcometocoursetext'] = 'Enrollment Confirmation: {$a->coursename}!
 
 If you have not done so already, you should edit your profile page so that we can learn more about you:
 
