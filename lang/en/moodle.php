@@ -646,24 +646,39 @@ $string['emailalreadysent'] = 'A password reset email has already been sent. Ple
 $string['emailactive'] = 'Email activated';
 $string['emailagain'] = 'Email (again)';
 $string['emailconfirm'] = 'Confirm your account';
-$string['emailconfirmation'] = 'Hi {$a->firstname},
-
-A new account has been requested at \'{$a->sitename}\'
-using your email address.
-
-To confirm your new account, please go to this web address:
-
-{$a->link}
-
-In most mail programs, this should appear as a blue link
-which you can just click on.  If that doesn\'t work,
-then cut and paste the address into the address
-line at the top of your web browser window.
-
-If you need help, please contact the site administrator,
-{$a->admin}';
+$string['emailconfirmation'] = '<div style="background-color: aliceblue;padding: 10px;font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">   
+    <div style="padding: 20px;">
+        <p>Hi {$a->firstname},</p>
+        
+        <p>Welcome to \'{$a->sitename}\', your hub for innovative learning and teaching tools!</p>
+        
+        <p>To complete your registration and unlock access to your virtual classroom, please confirm your account:</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="{$a->link}" style="background-color: #4CAF50; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px;">
+                Confirm Account
+            </a>
+        </div>
+        
+        <p>Let\'s make learning easier and more effective together.</p>
+        
+        <p>Happy Learning,<br>
+        The Atlearn LMS Team</p>
+        
+        <hr style="border: 1px solid #eee; margin: 20px 0;">
+        
+        <p style="color: #666; font-size: 14px;">
+            If you need help, please contact the site administrator,<br>
+            {$a->admin}
+        </p>
+        
+        <p style="color: #666; font-size: 14px;">
+            Need help? Contact us at <a href="mailto:support@atlearn.in">support@atlearn.in</a>
+        </p>
+    </div>
+</div>';
 $string['emailconfirmationresend'] = 'Resend confirmation email';
-$string['emailconfirmationsubject'] = '{$a}: account confirmation';
+$string['emailconfirmationsubject'] = 'Welcome to {$a}! Confirm Your Account';
 $string['emailconfirmsent'] = '<p>Hi <b>{$a}</b> account confirmation link will be sent to your email.</p>';
 $string['emailconfirmsentfailure'] = 'Confirmation email failed to send';
 $string['emailconfirmsentsuccess'] = 'Confirmation email sent successfully';

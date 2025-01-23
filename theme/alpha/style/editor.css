@@ -49521,7 +49521,7 @@ body:not(#rui-lang-btn).rui-navbar-lang {
 
 /* Footer */
 .rui-footer-content {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   font-size: 0.75rem;
 }
 @media (max-width: 1199.98px) {
