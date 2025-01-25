@@ -75,8 +75,10 @@
 
   font-size: $font-size-xs;
   font-weight: $font-weight-medium;
-  color: $body-color-light;
+  color: #fff;
   text-transform: uppercase;
+  background: #001a47ff;
+    padding: 10px;
 
   .theme-dark & {color: $dm-body-color-light;}
 }
