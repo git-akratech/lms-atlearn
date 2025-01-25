@@ -790,10 +790,10 @@ $topbar-width: $drawer-width-with-margin+35px !default;
 
     width: 100%;
     position: relative;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
+    display: none;
+    // display: inline-flex;
+    // align-items: center;
+    // justify-content: space-between;
 
     .rui-course-header &,
     .rui-title-container,
@@ -1321,7 +1321,7 @@ body:not(#rui-lang-btn).rui-navbar-lang {
 
 #page-enrol-index .main-content {
     margin: 0 auto;
-    padding: 40px 60px !important;
+    // padding: 40px 60px !important;
     width: $wrapper-md;
 
     @include media-breakpoint-between(xs, md) {
