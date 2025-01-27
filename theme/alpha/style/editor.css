@@ -37341,7 +37341,7 @@ textarea[data-auto-rows] {
   .mform fieldset.collapsible legend a.fheader h3 {
     font-size: 0.875rem;
     font-weight: 500;
-    color: #07011b;
+    color: #fff;
   }
   .theme-dark .modal .mform fieldset.collapsible legend a.fheader h3,
   .theme-dark .mform fieldset.collapsible legend a.fheader h3 {
