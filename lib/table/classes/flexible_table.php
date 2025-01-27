@@ -1929,7 +1929,7 @@ class flexible_table {
 
         $url = $this->baseurl->out(false, [$this->request[TABLE_VAR_RESET] => 1]);
 
-        $html  = html_writer::start_div('resettable mdl-right');
+        $html  = html_writer::start_div('resettable mdl-right reset-button');
         $html .= html_writer::link($url, get_string('resettable'), ['role' => 'button']);
         $html .= html_writer::end_div();
 

@@ -402,8 +402,11 @@
 
 // Participants filter
 .filter-group {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid $border-color;
+    // padding-bottom: 1rem;
+    // border-bottom: 1px solid $border-color;
+    // border-radius: $btn-border-radius;
+    padding: 15px;
+    border: 1px solid #001a47;
     border-radius: $btn-border-radius;
 
     .theme-dark & {
