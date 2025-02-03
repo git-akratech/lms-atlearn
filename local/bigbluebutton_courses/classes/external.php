@@ -1,12 +1,11 @@
 <?php
-namespace local_bigbluebutton_courses;
 
 defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/externallib.php');
 
-class external extends \external_api{
+class local_bigbluebutton_courses_external extends external_api{
     
-    public function get_courses_with_bigbluebutton() {
+    public static function get_courses_with_bigbluebutton() {
         global $DB;
 
         // Get all courses with BigBlueButton activities
