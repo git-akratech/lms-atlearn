@@ -143,6 +143,9 @@ class tokens extends system_report {
             ]))
             ->add_callback(static function(string $value, \stdClass $row): string {
                 global $OUTPUT;
+                if($row->shortname === null){
+                    $row->shortname = 'default_service';
+                }
                 $missingcapabilities = self::get_missing_capabilities((int)$row->userid, (int)$row->id, $row->shortname);
                 if (empty($missingcapabilities)) {
                     return '';

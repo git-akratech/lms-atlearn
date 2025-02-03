@@ -18402,7 +18402,7 @@ table .inplaceeditable.inplaceeditingon {
 .inplaceeditable .quickeditlink {
   width: max-content;
   max-width: 300px;
-  color: inherit;
+  /* color: inherit; */
   text-decoration: inherit;
   z-index: 2;
 }

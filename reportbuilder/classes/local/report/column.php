@@ -652,7 +652,12 @@ final class column {
         } else {
             foreach ($this->callbacks as $callback) {
                 [$callable, $arguments] = $callback;
+                if($value===null){
+                    $value="";
+                }
+                else{
                 $value = ($callable)($value, (object) $values, $arguments, null);
+                }
             }
         }
 
