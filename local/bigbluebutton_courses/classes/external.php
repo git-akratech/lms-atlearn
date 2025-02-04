@@ -16,7 +16,7 @@ class local_bigbluebutton_courses_external extends external_api {
     public static function get_courses_with_bigbluebutton() {
         global $DB;
         // Base URL for BigBlueButton meeting join
-        $baseMeetingUrl = 'http://localhost/lms.atlearn.in/mod/bigbluebuttonbn/bbb_view.php?action=join';
+        $baseMeetingUrl = 'https://lms.atlearn.in/mod/bigbluebuttonbn/bbb_view.php?action=join';
         // SQL query to get all courses with BigBlueButton activities and enrolled users
         $sql = "SELECT c.id AS courseid, c.fullname AS coursename, 
                         b.id AS bigbluebuttonid, cm.id AS cmid
