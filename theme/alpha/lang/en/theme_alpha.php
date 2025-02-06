@@ -1493,3 +1493,9 @@ $string['sort'] = 'Sort';
 $string['direction'] = 'Direction';
 $string['page'] = 'Page';
 $string['page_desc'] = 'Page navigation';
+$string['ai_learning'] = 'AI LEARNING';
+$string['smart_learning_solutions'] = 'Smart Learning Solutions with AI LMS';
+$string['ai_learning_description'] = 'Atlearn empowers education by leveraging smart, AI-driven technologies on its web learning platform to enhance the learning experience and foster student success.';
+$string['view_courses'] = 'View Courses';
+$string['create_course'] = 'Create Course';
+

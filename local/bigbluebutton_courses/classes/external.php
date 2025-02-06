@@ -21,7 +21,7 @@ class local_bigbluebutton_courses_external extends external_api {
         // Base URL for BigBlueButton meeting join
         $baseMeetingUrl = 'https://lms.atlearn.in/mod/bigbluebuttonbn/bbb_view.php?action=join';
          // Base URL for BigBlueButton settings page
-         $baseSettingsUrl = 'http://localhost/lms.atlearn.in/course/modedit.php?update=';
+         $baseSettingsUrl = 'https://lms.atlearn.in/course/modedit.php?update=';
         
         // SQL query to get all BigBlueButton activities across all courses
         $sql = "SELECT 
@@ -105,7 +105,7 @@ class local_bigbluebutton_courses_external extends external_api {
         // Base URL for BigBlueButton meeting join
         $baseMeetingUrl = 'https://lms.atlearn.in/mod/bigbluebuttonbn/bbb_view.php?action=join';
           // Base URL for BigBlueButton settings page
-          $baseSettingsUrl = 'http://localhost/lms.atlearn.in/course/modedit.php?update=';
+          $baseSettingsUrl = 'https://lms.atlearn.in/course/modedit.php?update=';
         
         // SQL query to get all BigBlueButton activities for a specific course
         $sql = "SELECT b.id AS bigbluebuttonid, b.name AS onlineclassname, cm.id AS cmid
