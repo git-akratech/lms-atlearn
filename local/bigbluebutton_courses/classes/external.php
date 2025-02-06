@@ -40,11 +40,11 @@ class local_bigbluebutton_courses_external extends external_api {
             JOIN {user} u ON u.id = ue.userid
             JOIN {course_modules} cm ON cm.instance = b.id 
             JOIN {modules} m ON cm.module = m.id AND m.name = 'bigbluebuttonbn'
-            WHERE b.id IS NOT NULL;";
+            WHERE b.id IS NOT NULL AND u.email = ?;";
         
         // Execute the query and fetch results
-        $params = ['useremail' => $useremail];
-        $results = $DB->get_records_sql($sql);
+      
+        $results = $DB->get_records_sql($sql, [$useremail]);
         
         // Prepare the response structure
         $activities = [];
