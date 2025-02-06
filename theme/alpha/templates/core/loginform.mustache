@@ -295,9 +295,9 @@
 
         {{^loginidprovtop}}
             {{#hasidentityproviders}}
-                <hr class="hr-small" />
-                <div class="rui-potentialidplist login-identityproviders mt-3 text-center">
-                    <p class="small text-center">{{#str}} potentialidps, auth {{/str}}</p>
+                <hr/>
+                <div class="rui-potentialidplist login-identityproviders text-center">
+                    <p class="small text-center autho-font">{{#str}} authlogin, auth {{/str}}</p>
                     <div class="row no-gutters mt-1">
                         {{#identityproviders}}
                             <a class="btn btn-secondary login-identityprovider-btn rui-potentialidp w-100 mt-1" href="{{url}}">
@@ -346,13 +346,6 @@
                 {{{loginhtmlblockbottom}}}
             </div>
         {{/loginhtmlblockbottom}}
-
-        {{#instructions}}
-            <div class="rui-hasinstructions-desc alert alert-info">
-                {{{instructions}}}
-            </div><!-- .rui-hasinstructions-desc -->
-        {{/instructions}}
-
         {{^loginlayoutimg}}
             {{#loginhtmlcontent3}}
                 <div class="rui-login-html-3">

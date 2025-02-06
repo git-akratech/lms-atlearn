@@ -45,10 +45,61 @@
     }
 }}
 {{> theme_alpha/head }}
-
+<style>
+    .bg-darkdeep1 { background-color:#001a47ff; }
+    .text-secondaryColor { color: #ffcc00; }
+    .text-whiteColor { color: #ffffff; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+    .tracking-5px { letter-spacing: 5px; }
+    .text-size-15 { font-size: 15px; }
+    .leading-62px { line-height: 62px; }
+    .rounded-2xl { border-radius: 16px; }
+    .shadow-brand { box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); margin-top:80px; }
+    .hover\:bg-darkblack:hover { background-color: #fff; color: #000}
+    .animate-spin-slow { animation: spin 10s linear infinite; }
+    .animate-move-hor { animation: moveHorizontally 3s ease-in-out infinite; }
+    .banner {width: 1300px;}
+    .banner-title { margin-top: 91px; margin-left: 5px;}
+    .banner_image {width: 400px;height: 400px; }
+    .banner-buttons {margin-top: 50px;}
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes moveHorizontally { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+</style>
 <body {{{ bodyattributes }}}>
     {{> core/local/toast/wrapper}}
-
+    <section>
+    {{! Banner Section }}
+    <div class="container-fluid bg-darkdeep1 pt-50px rounded-2xl relative overflow-hidden shadow-brand d-flex banner">
+        <div class="container-fluid grid grid-cols-1 lg:grid-cols-2 items-center">
+            {{! Banner Left }}
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-secondaryColor text-size-15 font-inter tracking-5px banner-title">
+                    {{#str}} ai_learning, theme_alpha {{/str}}
+                </h3>
+                <h1 class="text-2xl text-whiteColor md:text-6xl lg:text-size-50 2xl:text-6xl leading-10 md:leading-18 lg:leading-62px 2xl:leading-18 md:tracking-half lg:tracking-normal 2xl:tracking-half font-bold mb-15px">
+                    {{#str}} smart_learning_solutions, theme_alpha {{/str}}
+                </h1>
+                <p class="text-size-15 md:text-lg text-white font-medium mb-45px">
+                    {{#str}} ai_learning_description, theme_alpha {{/str}}
+                </p>
+                <div class="banner-buttons">
+                    <a href="{{config.wwwroot}}/course/index.php" class="mb-8 text-sm md:text-size-15 font-semibold text-darkdeep2 bg-whiteColor border border-whiteColor px-5 md:px-30px py-3 md:py-4 hover:text-whiteColor hover:bg-darkblack rounded inline-block mr-6px md:mr-30px shadow-hero-action">
+                        {{#str}} view_courses, theme_alpha {{/str}}
+                    </a>
+                    <a href="https://lms.atlearn.in/login/index.php" class="text-sm md:text-size-15 font-semibold text-whiteColor py-3 md:py-4 ml-5 hover:text-secondaryColor inline-block">
+                        {{#str}} create_course, theme_alpha {{/str}}
+                        <i class="icofont-long-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {{! Banner Right }}
+        </div>
+        <div>           
+            <img class="banner_image" src="{{config.wwwroot}}/theme/alpha/doc/banner_image_lms_ai.webp" alt="herobanner icon" title="herobanner icon" />          
+        </div>
+    </div>
+</section>
+ 
     <div id="page-wrapper" class="wrapper-fw d-print-block {{#output.courseheadermenu}}rui--course-with-nav{{/output.courseheadermenu}} {{^output.courseheadermenu}}rui--course-witout-nav{{/output.courseheadermenu}}">
 
         {{{ output.standard_top_of_body_html }}}
