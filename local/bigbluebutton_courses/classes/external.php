@@ -26,6 +26,8 @@ class local_bigbluebutton_courses_external extends external_api {
         // SQL query to get all BigBlueButton activities across all courses
         $sql = "SELECT 
                 b.id AS bigbluebuttonid, 
+                b.openingtime AS meetingopeningtime,
+                b.closingtime AS meetingclosingtime,
                 b.name AS onlineclassname, 
                 cm.id AS cmid, 
                 c.id AS courseid, 
@@ -59,6 +61,8 @@ class local_bigbluebutton_courses_external extends external_api {
                 'onlineclassname' => $result->onlineclassname,
                 'meetingurl' => $meetingurl,
                 'settingsurl' => $settingsUrl, // Use the constructed settings URL
+                'meetingopeningtime' => $result->meetingopeningtime,
+                'meetingclosingtime' => $result->meetingclosingtime,
                
             ];
         }
@@ -92,6 +96,8 @@ class local_bigbluebutton_courses_external extends external_api {
                 'onlineclassname' => new \external_value(PARAM_TEXT, 'BigBlueButton Activity Name'),
                 'meetingurl' => new \external_value(PARAM_URL, 'BigBlueButton Meeting Join URL'),
                 'settingsurl' => new \external_value(PARAM_URL, 'BigBlueButton Settings URL'),
+                'meetingopeningtime' => new \external_value(PARAM_TEXT, 'Online Meeting Opening Time'),
+                'meetingclosingtime' => new \external_value(PARAM_TEXT, 'ONline meeting Closing Time '),
             ])
         );
     }
@@ -108,7 +114,8 @@ class local_bigbluebutton_courses_external extends external_api {
           $baseSettingsUrl = 'https://lms.atlearn.in/course/modedit.php?update=';
         
         // SQL query to get all BigBlueButton activities for a specific course
-        $sql = "SELECT b.id AS bigbluebuttonid, b.name AS onlineclassname, cm.id AS cmid
+        $sql = "SELECT b.id AS bigbluebuttonid, b.openingtime AS meetingopeningtime,
+                b.closingtime AS meetingclosingtime, b.name AS onlineclassname, cm.id AS cmid
                 FROM {bigbluebuttonbn} b
                 JOIN {course_modules} cm ON cm.instance = b.id 
                 JOIN {modules} m ON cm.module = m.id 
@@ -128,6 +135,8 @@ class local_bigbluebutton_courses_external extends external_api {
                 'onlineclassname' => $result->onlineclassname,
                 'meetingurl' => $meetingurl, // Constructed meeting URL
                 'settingsurl' => $settingsUrl, // Use the constructed settings URL
+                'meetingopeningtime' => $result->meetingopeningtime,
+                'meetingclosingtime' => $result->meetingclosingtime,
             ];
         }
         
@@ -158,6 +167,8 @@ class local_bigbluebutton_courses_external extends external_api {
                 'onlineclassname' => new \external_value(PARAM_TEXT, 'BigBlueButton Activity Name'),
                 'meetingurl' => new \external_value(PARAM_URL, 'BigBlueButton Meeting Join URL'),
                 'settingsurl' => new \external_value(PARAM_URL, 'BigBlueButton Settings URL'),
+                'meetingopeningtime' => new \external_value(PARAM_TEXT, 'Online Meeting Opening Time'),
+                'meetingclosingtime' => new \external_value(PARAM_TEXT, 'ONline meeting Closing Time '),
             ])
         );
     }
