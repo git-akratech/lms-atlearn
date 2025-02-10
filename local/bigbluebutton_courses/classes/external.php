@@ -47,11 +47,16 @@ class local_bigbluebutton_courses_external extends external_api {
         // Execute the query and fetch results
       
         $results = $DB->get_records_sql($sql, [$useremail]);
+         // Get current timestamp
+         $current_time = time();
         
         // Prepare the response structure
         $activities = [];
         foreach ($results as $result) {
-            $meetingurl = $baseMeetingUrl . '&id=' . $result->cmid . '&bn=' . $result->bigbluebuttonid;
+            $meetingurl = null;
+            if ($current_time >= $result->meetingopeningtime && $current_time <= $result->meetingclosingtime) {
+                $meetingurl = $baseMeetingUrl . '&id=' . $result->cmid . '&bn=' . $result->bigbluebuttonid;
+            }
             $settingsUrl = $baseSettingsUrl . $result->cmid . '&return=1';
 
             $activities[] = [
@@ -61,8 +66,8 @@ class local_bigbluebutton_courses_external extends external_api {
                 'onlineclassname' => $result->onlineclassname,
                 'meetingurl' => $meetingurl,
                 'settingsurl' => $settingsUrl, // Use the constructed settings URL
-                'meetingopeningtime' => $result->meetingopeningtime,
-                'meetingclosingtime' => $result->meetingclosingtime,
+                'meetingopeningtime' => date('Y-m-d H:i:s', $result->meetingopeningtime),
+                'meetingclosingtime' => date('Y-m-d H:i:s', $result->meetingclosingtime),
                
             ];
         }
@@ -123,11 +128,16 @@ class local_bigbluebutton_courses_external extends external_api {
         
         // Execute the query and fetch results
         $results = $DB->get_records_sql($sql, [$courseid]);
+          // Get current timestamp
+          $current_time = time();
         
         // Prepare the response structure
         $activities = [];
         foreach ($results as $result) {
-            $meetingurl = $baseMeetingUrl . '&id=' . $result->cmid . '&bn=' . $result->bigbluebuttonid;
+            $meetingurl = null;
+            if ($current_time >= $result->meetingopeningtime && $current_time <= $result->meetingclosingtime) {
+                $meetingurl = $baseMeetingUrl . '&id=' . $result->cmid . '&bn=' . $result->bigbluebuttonid;
+            }
             $settingsUrl = $baseSettingsUrl . $result->cmid . '&return=1';
 
             $activities[] = [
@@ -135,8 +145,8 @@ class local_bigbluebutton_courses_external extends external_api {
                 'onlineclassname' => $result->onlineclassname,
                 'meetingurl' => $meetingurl, // Constructed meeting URL
                 'settingsurl' => $settingsUrl, // Use the constructed settings URL
-                'meetingopeningtime' => $result->meetingopeningtime,
-                'meetingclosingtime' => $result->meetingclosingtime,
+                'meetingopeningtime' => date('Y-m-d H:i:s', $result->meetingopeningtime),
+                'meetingclosingtime' => date('Y-m-d H:i:s', $result->meetingclosingtime),
             ];
         }
         
