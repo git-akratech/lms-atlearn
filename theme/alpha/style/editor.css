@@ -49813,7 +49813,7 @@ body:not(.theme-dark) .hide-on-lightmode {
   flex: 1 0 auto;
 }
 #page-site-index #page.drawers .main-inner {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 #page.drawers .activity-header {
   margin: 0;
