@@ -47,12 +47,12 @@
 }
 
 #page {
-    padding: 63px 20px 7px;
+    // padding: 63px 20px 7px;
     width: 100%;
     position: relative;
 
     @include media-breakpoint-between(xs, md) {
-        padding-top: 60px;
+        // padding-top: 60px;
     }
 }
 
