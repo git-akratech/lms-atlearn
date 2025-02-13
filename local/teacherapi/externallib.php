@@ -10,7 +10,7 @@ class local_teacherapi_external extends external_api {
     
         // Define the SQL query
         $sql = "
-       SELECT 
+        SELECT 
             u.id AS userid,
             u.firstname,
             u.lastname,
@@ -24,28 +24,43 @@ class local_teacherapi_external extends external_api {
             c.id AS courseid,
             c.fullname AS coursename,
             r.name AS rolename,
-            CONCAT('/user/pix.php/', u.id, '/f1.jpg') AS profile_picture_url
-            FROM 
-                {user} u
-            JOIN 
-                {role_assignments} ra ON u.id = ra.userid
-            JOIN 
-                {context} ctx ON ra.contextid = ctx.id
-            JOIN 
-                {course} c ON ctx.instanceid = c.id
-            JOIN 
-                {role} r ON ra.roleid = r.id
-            WHERE 
-                ctx.contextlevel = 50 -- Course-level context
-                AND r.id = 3 -- Teacher role (or 'teacher' for non-editing teacher)
-                AND u.deleted = 0; -- Exclude deleted users;";
+            u.picture AS profile_picture
+        FROM 
+            {user} u
+        JOIN 
+            {role_assignments} ra ON u.id = ra.userid
+        JOIN 
+            {context} ctx ON ra.contextid = ctx.id
+        JOIN 
+            {course} c ON ctx.instanceid = c.id
+        JOIN 
+            {role} r ON ra.roleid = r.id
+        WHERE 
+            ctx.contextlevel = 50 -- Course-level context
+            AND r.id = 3 -- Teacher role (or 'teacher' for non-editing teacher)
+            AND u.deleted = 0; -- Exclude deleted users";
+    
         // Execute the query
         $teachers = $DB->get_records_sql($sql);
+    
+        // Moodle default profile image URL
+        $default_profile_image = new moodle_url('/pix/u/f1.png');
     
         // Process results
         $users = [];
         foreach ($teachers as $teacher) {
-            $profileimgurl = new moodle_url('/user/pix.php', ['id' => $teacher->userid]);
+            // Get the user context for profile image
+            $user_context = context_user::instance($teacher->userid);
+    
+            // Construct the profile image URL dynamically
+            if ($teacher->profile_picture > 0) {
+                $profileimgurl = moodle_url::make_pluginfile_url(
+                    $user_context->id, 'user', 'icon', 'alpha', '/', 'f2'
+                )->out(false) . '?rev=' . $teacher->profile_picture;
+            } else {
+                $profileimgurl = $default_profile_image->out(false);
+            }
+    
             $users[] = [
                 'id' => $teacher->userid,
                 'firstname' => $teacher->firstname,
@@ -57,13 +72,15 @@ class local_teacherapi_external extends external_api {
                 'phone1' => $teacher->phone1,
                 'address' => $teacher->address,
                 'city' => $teacher->city,
-                'profile_image' => $profileimgurl->out(false),
+                'profile_image' => $profileimgurl,
             ];
         }
     
         return $users;
     }
-
+    
+    
+    
     public static function get_teachers_parameters() {
         return new external_function_parameters([]);
     }
