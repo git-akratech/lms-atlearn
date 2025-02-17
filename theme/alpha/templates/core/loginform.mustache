@@ -167,6 +167,7 @@
 
 {{/loginlayoutimg}}
 
+
 <div class="rui-login-box">
     <div class="rui-login-content">
         {{#cansignup}}
@@ -208,18 +209,11 @@
             {{/loginintrotext}}
 
         </div>
-
-        {{#error}}
-            <div class="loginerrors mt-3">
-                <a href="#" id="loginerrormessage" class="accesshide">{{error}}</a>
-                <div class="alert alert-danger" role="alert" data-aria-autofocus="true">{{error}}</div>
-            </div>
-        {{/error}}
-
-        {{#loginidprovtop}}
+         {{^loginidprovtop}}
             {{#hasidentityproviders}}
-                <div class="rui-potentialidplist login-identityproviders mt-3 text-center">
-                    <p class="small text-center">{{#str}} potentialidps, auth {{/str}}</p>
+                <hr/>
+                <div class="rui-potentialidplist login-identityproviders text-center">
+                    <p class="small text-center autho-font">{{#str}} authlogin, auth {{/str}}</p>
                     <div class="row no-gutters mt-1">
                         {{#identityproviders}}
                             <a class="btn btn-secondary login-identityprovider-btn rui-potentialidp w-100 mt-1" href="{{url}}">
@@ -230,10 +224,25 @@
                             </a>
                         {{/identityproviders}}
                     </div>
-                    <hr class="hr-small" />
                 </div>
             {{/hasidentityproviders}}
         {{/loginidprovtop}}
+
+        {{#error}}
+            <div class="loginerrors mt-3">
+                <a href="#" id="loginerrormessage" class="accesshide">{{error}}</a>
+                <div class="alert alert-danger" role="alert" data-aria-autofocus="true">{{error}}</div>
+            </div>
+        {{/error}}
+
+                
+        <div class="rui-loginpage-intro-content mb-3 mt-3 text-center login-page-content">
+            <p>Or</p>
+        </div>
+        <div class="rui-loginpage-intro-content mb-3 mt-3 text-center login-page-content">
+            <p> Login into your account</p>
+        </div>
+            
 
         <div class="rui-login-form">
 
@@ -293,24 +302,7 @@
             </form>
         </div><!-- .rui-login-form -->
 
-        {{^loginidprovtop}}
-            {{#hasidentityproviders}}
-                <hr/>
-                <div class="rui-potentialidplist login-identityproviders text-center">
-                    <p class="small text-center autho-font">{{#str}} authlogin, auth {{/str}}</p>
-                    <div class="row no-gutters mt-1">
-                        {{#identityproviders}}
-                            <a class="btn btn-secondary login-identityprovider-btn rui-potentialidp w-100 mt-1" href="{{url}}">
-                                {{#iconurl}}
-                                    <img src="{{iconurl}}" alt="" width="24" height="24"/>
-                                {{/iconurl}}
-                                {{name}}
-                            </a>
-                        {{/identityproviders}}
-                    </div>
-                </div>
-            {{/hasidentityproviders}}
-        {{/loginidprovtop}}
+ 
 
         <div class="rui-login-additional-btns">
             {{#canloginasguest}}
