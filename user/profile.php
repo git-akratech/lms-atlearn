@@ -231,4 +231,27 @@ echo $renderer->render($tree);
 
 echo '</div>';  // Userprofile class.
 
+// After fetching the user record and before rendering the profile
+$roles = get_user_roles($context, $user->id);
+
+// Display user roles
+if (!empty($roles)) {
+    echo '<div class="user-roles">';
+    echo '<h3>' . get_string('roles', 'role') . ':</h3>'; // Assuming 'roles' is a string defined in the language file
+   
+    foreach ($roles as $role) {
+        echo '<span>' . format_string($role->shortname) . '</span>'; // Display the role's short name
+    }
+   
+    echo '</div>';
+}else {
+    // Optional: Display a message if no roles are found
+    echo '<div class="user-roles">';
+    echo '<h3>' . get_string('roles', 'role') . ':</h3>';
+    echo '<p>' . get_string('noroles', 'role') . '</p>'; // Assuming 'noroles' is a string defined in the language file
+    echo '</div>';
+}
+
+
+
 echo $OUTPUT->footer();
