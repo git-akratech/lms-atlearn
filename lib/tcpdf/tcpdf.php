@@ -6935,7 +6935,7 @@ class TCPDF {
 	 * @public
 	 * @since 1.1
 	 */
-	public function Image($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array()) {
+	public function Image($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=100, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array()) {
 		if ($this->state != 2) {
 			return false;
 		}
@@ -14091,7 +14091,7 @@ class TCPDF {
 	 */
 	public function setJPEGQuality($quality) {
 		if (($quality < 1) OR ($quality > 100)) {
-			$quality = 75;
+			$quality = 40;
 		}
 		$this->jpeg_quality = intval($quality);
 	}

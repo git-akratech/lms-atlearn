@@ -544,3 +544,5 @@ $string['course:togglecompletion'] = 'Manually mark activities as complete';
 // Deprecated since Moodle 4.2.
 $string['confirmaddadmin'] = 'Do you really want to add user <strong>{$a}</strong> as new site administrator?';
 $string['confirmdeladmin'] = 'Do you really want to remove user <strong>{$a}</strong> from the list of site administrators?';
+$string['roles'] = 'Roles';
+$string['noroles'] = 'No roles assigned.';
