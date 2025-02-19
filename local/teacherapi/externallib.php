@@ -55,7 +55,7 @@ class local_teacherapi_external extends external_api {
             // Construct the profile image URL dynamically
             if ($teacher->profile_picture > 0) {
                 $profileimgurl = moodle_url::make_pluginfile_url(
-                    $user_context->id, 'user', 'icon', 'alpha', '/', 'f2'
+                    $user_context->id, 'user', 'icon', 'alpha', '/', 'f20'
                 )->out(false) . '?rev=' . $teacher->profile_picture;
             } else {
                 $profileimgurl = $default_profile_image->out(false);
