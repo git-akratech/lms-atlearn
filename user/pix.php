@@ -40,7 +40,7 @@ if (count($args) == 2) {
     if ($args[1] === 'f1.jpg') {
         $image = 'f1';
     } else {
-        $image = 'f2';
+        $image = 'f20';
     }
     if ($usercontext = context_user::instance($userid, IGNORE_MISSING)) {
         $url = moodle_url::make_pluginfile_url($usercontext->id, 'user', 'icon', null, '/', $image);

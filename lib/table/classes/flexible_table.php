@@ -417,7 +417,7 @@ class flexible_table {
      */
     public function column_sticky(string $column, bool $sticky = true): void {
         if (isset($this->columnsticky[$column])) {
-            $this->columnsticky[$column] = $sticky == true ? ' sticky-column' : '';
+            $this->columnsticky[$column] = $sticky == true ? ' sticky' : '';
         }
     }
 

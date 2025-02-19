@@ -16053,6 +16053,8 @@ a.autolink.glossary:hover {
 .collapsible-actions {
   display: none;
   text-align: right;
+  position: relative;
+  bottom: 40px;
 }
 
 .jsenabled .collapsible-actions {
@@ -27515,7 +27517,7 @@ li.section.hidden span.commands a.editing_show {
   margin: 0;
 }
 .sectionname a {
-  color: #07011b;
+  color: #fff;
 }
 .theme-dark .sectionname a {
   color: #f9f9fa;

@@ -514,6 +514,9 @@ a.autolink.glossary:hover {
 .collapsible-actions {
     display: none;
     text-align: right;
+    position: relative;
+    bottom: 40px;
+
 }
 
 .jsenabled .collapsible-actions {
