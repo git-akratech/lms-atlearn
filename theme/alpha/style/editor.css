@@ -26558,10 +26558,6 @@ table.calendartable caption {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background: rgba(0, 0, 0, 0.3);
-  background-image: -webkit-linear-gradient(-45deg, rgba(0, 0, 0, 0) 53%, #000 110%);
-  background-image: -o-linear-gradient(-45deg, rgba(0, 0, 0, 0) 53%, #000 110%);
-  background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0) 53%, #000 110%);
   transition: all 350ms ease-in-out;
 }
 .rui-course--list .rui-course-card .rui-course-card-wrapper:before {
@@ -26569,7 +26565,6 @@ table.calendartable caption {
 }
 .rui-course-card .rui-course-card-wrapper:after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 0;
   left: 0;
@@ -26581,7 +26576,7 @@ table.calendartable caption {
 .rui-course--list .rui-course-card .rui-course-card-wrapper:after {
   display: none;
 }
-.rui-course-card .rui-course-card-wrapper:hover:after {
+.rui-course-card .rui-course-card-wrapper:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 .rui-course--list .rui-course-card .rui-course-card-wrapper:hover:after {
