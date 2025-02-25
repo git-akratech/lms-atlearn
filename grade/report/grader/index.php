@@ -32,7 +32,7 @@ require_once($CFG->dirroot.'/grade/report/grader/lib.php');
 raise_memory_limit(MEMORY_HUGE);
 set_time_limit(120);
 
-$courseid      = required_param('id', PARAM_INT);        // course id
+$courseid      = $_REQUEST['id'];        // course id
 $page          = optional_param('page', 0, PARAM_INT);   // active page
 $edit          = optional_param('edit', -1, PARAM_BOOL); // sticky editting mode
 
