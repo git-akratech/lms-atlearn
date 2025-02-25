@@ -1134,10 +1134,12 @@ class core_renderer extends \core_renderer {
             // Define which roles can see which items
             $customitem1_allowed_roles = array('manager', 'coursecreator', 'editingteacher', 'teacher');
             $customitem3_allowed_roles = array('manager', 'coursecreator', 'editingteacher');
+            $customitem4_allowed_roles = array('student');
 
             // Check if user has any of the allowed roles
             $can_see_customitem1 = array_intersect($rolenames, $customitem1_allowed_roles);
             $can_see_customitem3 = array_intersect($rolenames, $customitem3_allowed_roles);
+            $can_see_customitem4 = array_intersect($rolenames, $customitem4_allowed_roles);
 
             $headerlinks = array(
                 "0" => array(
@@ -1376,7 +1378,7 @@ class core_renderer extends \core_renderer {
                 ),
                 "10" => array(
                     'position' => $poscustomitem5,
-                    'status' => $iscustomitem5on,
+                    'status' => $iscustomitem5on && $can_see_customitem4,
                     'icon' => $iconcustomitem5,
                     'title' => $labelcustomitem5,
                     'url' => new moodle_url($urlcustomitem5),

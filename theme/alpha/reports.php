@@ -143,12 +143,27 @@ $templatecontext = [
     // Display results
     if (!empty($reportdata)) {
         $table = new html_table();
-        $table->head = array(
-            get_string('course'),
-            get_string('enrolled', 'theme_alpha'),
-            get_string('completed', 'theme_alpha'),
-            get_string('completion', 'theme_alpha')
-        );
+       // Create table header cells with class attributes
+        $course_header = new html_table_cell(get_string('course'));
+        $course_header->attributes['class'] = 'course-header';
+
+        $enrolled_header = new html_table_cell(get_string('enrolled', 'theme_alpha'));
+        $enrolled_header->attributes['class'] = 'enrolled-header';
+
+        $completed_header = new html_table_cell(get_string('completed', 'theme_alpha'));
+        $completed_header->attributes['class'] = 'completed-header';
+
+        $completion_header = new html_table_cell(get_string('completion', 'theme_alpha'));
+        $completion_header->attributes['class'] = 'completion-header';
+
+        // Create a table row for headers
+        $header_row = new html_table_row();
+        $header_row->cells = array($course_header, $enrolled_header, $completed_header, $completion_header);
+
+        $table->data[] = $header_row;
+
+        
+        
         $table->attributes['class'] = 'generaltable';
         
         foreach ($reportdata as $data) {
