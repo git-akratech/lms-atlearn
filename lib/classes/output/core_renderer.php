@@ -2801,13 +2801,13 @@ EOD;
      * @return string the HTML to output.
      */
     public function continue_button($url) {
-        if (!($url instanceof moodle_url)) {
-            $url = new moodle_url($url);
-        }
-        $button = new single_button($url, get_string('continue'), 'get', single_button::BUTTON_PRIMARY);
-        $button->class = 'continuebutton';
+        // if (!($url instanceof moodle_url)) {
+        //     $url = new moodle_url($url);
+        // }
+        // $button = new single_button($url, get_string('continue'), 'get', single_button::BUTTON_PRIMARY);
+        // $button->class = 'continuebutton';
 
-        return $this->render($button);
+        // return $this->render($button);
     }
 
     /**
