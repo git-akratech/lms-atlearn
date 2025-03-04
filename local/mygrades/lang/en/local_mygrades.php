@@ -12,4 +12,4 @@ $string['page-local-studentgrades-x'] = 'Any student grades plugin page';
 $string['page-local-studentgrades-view'] = 'Student grades view page';
 $string['pluginname'] = 'My Grades';
 $string['mygrades'] = 'My Grades';
-$string['nogrades'] = 'No grades available for this course.';
+$string['nogrades'] = 'No grades available for your course.';
