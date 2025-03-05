@@ -146,7 +146,7 @@ $string['privacy:metadata:userpref:loginlockout'] = 'Whether the user\'s account
 $string['privacy:metadata:userpref:loginlockoutignored'] = 'Indicates that a user\'s account should never be subject to lockouts';
 $string['privacy:metadata:userpref:loginlockoutsecret'] = 'When locked, the secret the user must use for unlocking their account';
 $string['potentialidps'] = 'Log in using your account on:';
-$string['authlogin'] = 'If you have Atlearn Online Meeting Account login as AuthO';
+$string['authlogin'] = '<em>If you have Atlearn Online Meeting Account, login as AuthO</em>';
 $string['recaptcha'] = 'reCAPTCHA';
 $string['recaptcha_help'] = 'The CAPTCHA is for preventing abuse from automated programs. Follow the instructions to verify you are a person. This could be a box to check, characters presented in an image you must enter or a set of images to select from.
 
