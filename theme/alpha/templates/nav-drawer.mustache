@@ -79,6 +79,7 @@
                 </div>
             </div>
         {{/showmycoursesbox}}
+
         {{#customstcontent}}
             <div class="rui-customstcontent rui-custom-sidebar-content my-3">
                 {{{customstcontent}}}
@@ -90,6 +91,7 @@
                 {{{output.mainsidebarmenu}}}
                 {{{customnavitems}}}
             </ul>
+
         {{/output.mainsidebarmenu}}
 
         {{#iscoursepage}}
@@ -112,12 +114,35 @@
             <div class="rui-customsfcontent rui-custom-sidebar-content my-2">
                 {{{customsfcontent}}}
             </div>
+            
         {{/customsfcontent}}
 
         {{{ sidebarbb }}}
 
     </div>
-
+  <li class="has-submenu">
+     <i class="fas fa-list list-icon"></i>
+      <a class="nav-link report-head" href="#">All Reports</a>
+        <ul class="submenu">
+            <li class="nav-item"><a class="nav-link report-one" href="">Course Report</a></li>
+            <ul class="child-submenu">
+                <li class=""><a class="nav-link" href="{{ config.wwwroot }}/theme/alpha/reports.php">Enrolled Course Progress</a></li>
+                <li class=""><a class="nav-link" href="">Courses By Groups</a></li>
+            </ul>
+            <li class="nav-item"><a class="nav-link report-two" href="">Visitors Report</a></li>
+            <ul class="child-submenu">
+                <li class=""><a class="nav-link" href="">Guest Logins Report</a></li>
+            </ul>
+            <li class="nav-item"><a class="nav-link report-three" href="">System Report</a></li>
+            <ul class="child-submenu">
+                <li class=""><a class="nav-link" href="">Disk Usage Report</a></li>
+            </ul>
+            <li class="nav-item"><a class="nav-link report-four" href="">User Report</a></li>
+            <ul class="child-submenu">
+                <li class=""><a class="nav-link" href="">Student count course</a></li>
+            </ul>
+        </ul>
+</li>
     {{^topbaradminbtnon}}
         {{#output.adminheaderlink}}
             <div class="rui-drawer-footer">
@@ -125,4 +150,5 @@
             </div>
         {{/output.adminheaderlink}}
     {{/topbaradminbtnon}}
+  
 </div>
