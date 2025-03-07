@@ -1249,7 +1249,7 @@ $string['loginas'] = 'Log in as';
 $string['loginaspasswordexplain'] = '<p>You must enter the special "loginas password" to use this feature.<br />If you do not know it, ask your server administrator.</p>';
 $string['login_failure_logs'] = 'Login failure logs';
 $string['loginguest'] = 'Access as a guest';
-$string['loginsite'] = 'Log in to the site';
+$string['loginsite'] = 'Atlearn LMS | AI-Powered Learning Management System';
 $string['loginsteps'] = 'For full access to this site, you first need to create an account.';
 $string['loginstepsnone'] = '<p>Hi!</p>
 <p>For full access to courses you\'ll need to create yourself an account.</p>
