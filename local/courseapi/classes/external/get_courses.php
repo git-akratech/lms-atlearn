@@ -15,7 +15,7 @@ use external_multiple_structure;
 use external_value;
 use external_format_value;
 
-class local_courseapi_external extends external_api {
+class get_courses_external extends external_api {
 
     public static function execute_parameters() {
         return new external_function_parameters([]);
