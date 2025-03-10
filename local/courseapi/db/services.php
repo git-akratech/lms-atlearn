@@ -3,7 +3,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $functions = [
     'local_courseapi_execute' => [
-        'classname'   => 'local_courseapi_external',
+        'classname'   => 'get_courses_external',
         'methodname'  => 'execute',
         'classpath'   => 'local/courseapi/classes/external/get_courses.php',
         'description' => 'Returns course category, course details, and creator information.',
