@@ -120,27 +120,17 @@
         {{{ sidebarbb }}}
 
     </div>
-  <li class="has-submenu">
+
+ <li class="has-submenu">
      <i class="fas fa-list list-icon"></i>
       <a class="nav-link report-head" href="#">All Reports</a>
         <ul class="submenu">
-            <li class="nav-item"><a class="nav-link report-one" href="">Course Report</a></li>
-            <ul class="child-submenu">
-                <li class=""><a class="nav-link" href="{{ config.wwwroot }}/theme/alpha/reports.php">Enrolled Course Progress</a></li>
-                <li class=""><a class="nav-link" href="{{ config.wwwroot }}/local/kopere_dashboard/courses_by_groups.php">Courses By Groups</a></li>
-            </ul>
-            <li class="nav-item"><a class="nav-link report-two" href="">Visitors Report</a></li>
-            <ul class="child-submenu">
-                <li class=""><a class="nav-link" href="{{ config.wwwroot }}/local/kopere_dashboard/guest_logins_report.php">Guest Logins Report</a></li>
-            </ul>
-            <li class="nav-item"><a class="nav-link report-three" href="">System Report</a></li>
-            <ul class="child-submenu">
-                <li class=""><a class="nav-link" href="">Disk Usage Report</a></li>
-            </ul>
-            <li class="nav-item"><a class="nav-link report-four" href="">User Report</a></li>
-            <ul class="child-submenu">
-                <li class=""><a class="nav-link" href="">Student count course</a></li>
-            </ul>
+            <li class="nav-item"><a class="nav-link" href="{{ config.wwwroot }}/theme/alpha/reports.php">Enrolled Course Progress</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ config.wwwroot }}/local/kopere_dashboard/courses_by_groups.php">Courses By Groups</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ config.wwwroot }}/local/kopere_dashboard/guest_logins_report.php">Guest Logins Report</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ config.wwwroot }}/local/kopere_dashboard/disk_usage_report.php">Disk Usage Report</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ config.wwwroot }}/local/kopere_dashboard/users_never_logged_in.php">Inactive Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ config.wwwroot }}/local/kopere_dashboard/users_completed_course.php">Course completers</a></li>   
         </ul>
 </li>
     {{^topbaradminbtnon}}
