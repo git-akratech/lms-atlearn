@@ -48,75 +48,84 @@ try {
     // Get student role ID
     $studentrole = $DB->get_record('role', array('shortname' => 'student'), '*', MUST_EXIST);
 
-    // Get students data
-    $students = \theme_alpha\util\user_data::get_users_list(
-        $page, 
-        $perpage, 
-        $search, 
-        $sort, 
-        $direction, 
-        $studentrole->id
-    );
+    // Get students with the student role
+    $studentsql = "
+        SELECT u.id, u.firstname, u.lastname, u.email
+        FROM {user} u
+        JOIN {role_assignments} ra ON u.id = ra.userid
+        JOIN {context} ctx ON ra.contextid = ctx.id
+        WHERE ra.roleid = :studentroleid
+          AND ctx.contextlevel = :contextlevel
+    ";
 
-    // Setup pagination
-    $totalstudents = $students['total'];
+    $params = [
+        'studentroleid' => $studentrole->id,
+        'contextlevel' => CONTEXT_COURSE
+    ];
+
+    if (!empty($search)) {
+        $studentsql .= " AND (" . $DB->sql_like('u.firstname', ':search', false) . " 
+                         OR " . $DB->sql_like('u.lastname', ':search', false) . ")";
+        $params['search'] = '%' . $DB->sql_like_escape($search) . '%';
+    }
+
+    // Pagination
+    $students = $DB->get_records_sql($studentsql, $params, $page * $perpage, $perpage);
+
+    // Total students
+    $totalstudents = $DB->count_records_sql("SELECT COUNT(*) FROM {user} u
+        JOIN {role_assignments} ra ON u.id = ra.userid
+        JOIN {context} ctx ON ra.contextid = ctx.id
+        WHERE ra.roleid = :studentroleid AND ctx.contextlevel = :contextlevel", $params);
+
     $totalpages = ceil($totalstudents / $perpage);
 
-    // Generate pagination data
+    // Pagination setup
     $pagination = new stdClass();
     $pagination->pages = array();
 
     if ($totalstudents > 0) {
-        // Previous page
         if ($page > 0) {
-            $pagination->previousurl = new moodle_url('/theme/alpha/students.php', array(
+            $pagination->previousurl = new moodle_url('/theme/alpha/students.php', [
                 'page' => $page - 1,
                 'perpage' => $perpage,
                 'sort' => $sort,
                 'direction' => $direction,
                 'search' => $search
-            ));
+            ]);
         }
 
-        // Page numbers
         for ($i = 0; $i < $totalpages; $i++) {
-            if ($i == $page) {
-                $pagination->pages[] = array(
-                    'number' => $i + 1,
-                    'current' => true
-                );
-            } else {
-                $pagination->pages[] = array(
-                    'number' => $i + 1,
-                    'url' => new moodle_url('/theme/alpha/students.php', array(
-                        'page' => $i,
-                        'perpage' => $perpage,
-                        'sort' => $sort,
-                        'direction' => $direction,
-                        'search' => $search
-                    ))
-                );
-            }
+            $pagination->pages[] = [
+                'number' => $i + 1,
+                'current' => ($i == $page),
+                'url' => new moodle_url('/theme/alpha/students.php', [
+                    'page' => $i,
+                    'perpage' => $perpage,
+                    'sort' => $sort,
+                    'direction' => $direction,
+                    'search' => $search
+                ])
+            ];
         }
 
-        // Next page
         if ($page < $totalpages - 1) {
-            $pagination->nexturl = new moodle_url('/theme/alpha/students.php', array(
+            $pagination->nexturl = new moodle_url('/theme/alpha/students.php', [
                 'page' => $page + 1,
                 'perpage' => $perpage,
                 'sort' => $sort,
                 'direction' => $direction,
                 'search' => $search
-            ));
+            ]);
         }
     }
 
     // Output starts here
     echo $OUTPUT->header();
     
-    echo $OUTPUT->render_from_template('theme_alpha/student_list', array(
-        'students' => $students['users'],
-        'total' => $students['total'],
+    echo $OUTPUT->render_from_template('theme_alpha/student_list', [
+        'students' => array_values($students),
+        'total' => $totalstudents,
         'sort' => $sort,
         'direction' => $direction,
         'search' => $search,
@@ -124,8 +133,8 @@ try {
         'showing_start' => ($page * $perpage) + 1,
         'showing_end' => min(($page + 1) * $perpage, $totalstudents),
         'total_students' => $totalstudents
-    ));
-    
+    ]);
+
     echo $OUTPUT->footer();
 
 } catch (Exception $e) {

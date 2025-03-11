@@ -125,6 +125,7 @@ $templatecontext = [
 
     // Output starts here
     echo $OUTPUT->header();
+    echo html_writer::tag('h4', get_string('enrolled_course_progress', 'local_kopere_dashboard'));
 
     // Display search form
     $searchform = '
