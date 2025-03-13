@@ -24,7 +24,7 @@ try {
     $searchsql = '';
 
     if (!empty($search)) {
-        $searchsql = ' AND ' . $DB->sql_like('student_name', ':search', false);
+        $searchsql = ' AND ' . $DB->sql_like('u.firstname', ':search', false);
         $params['search'] = '%' . $DB->sql_like_escape($search) . '%';
     }
 

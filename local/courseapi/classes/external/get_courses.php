@@ -25,12 +25,16 @@ class get_courses_external extends external_api {
         global $OUTPUT, $DB, $CFG;
     
         $sql = "SELECT c.id, c.fullname, c.shortname, c.startdate, c.enddate, 
-                       c.category, cc.name AS categoryname, c.timecreated,
-                       u.id AS creatorid, u.firstname AS creatorfirstname, u.lastname AS creatorlastname,u.picture, u.imagealt
-                FROM {course} c
-                JOIN {course_categories} cc ON cc.id = c.category
-                LEFT JOIN {user} u ON u.id = c.id
-                WHERE c.visible = 1";
+                   c.category, cc.name AS categoryname, c.timecreated,
+                   u.id AS creatorid, u.firstname AS creatorfirstname, 
+                   u.lastname AS creatorlastname, u.picture, u.imagealt
+            FROM {course} c
+            JOIN {course_categories} cc ON cc.id = c.category
+            JOIN {context} ctx ON ctx.instanceid = c.id AND ctx.contextlevel = 50
+            JOIN {role_assignments} ra ON ra.contextid = ctx.id
+            JOIN {role} r ON r.id = ra.roleid AND r.shortname = 'editingteacher'
+            JOIN {user} u ON u.id = ra.userid
+            WHERE c.visible = 1";
     
         $courses = $DB->get_records_sql($sql);
         $default_profile_image = new moodle_url('/pix/u/f1.png');
