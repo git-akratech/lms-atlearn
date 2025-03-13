@@ -34,8 +34,9 @@ try {
                 WHERE e.courseid = c.id AND ue.status = 0) AS enrolled_count,
                (SELECT COUNT(*) FROM {course_completions} cc
                 WHERE cc.course = c.id AND cc.timecompleted IS NOT NULL) AS completed_count
-        FROM {course} c" . $searchsql;
-
+        FROM {course} c 
+        WHERE c.visible = 1" . $searchsql;
+    $params['siteid'] = SITEID;
     // Get total count
     $total_courses = $DB->count_records_sql("SELECT COUNT(*) FROM ({$sql}) temp", $params);
 

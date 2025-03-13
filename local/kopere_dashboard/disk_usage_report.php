@@ -22,7 +22,7 @@ try {
     $searchsql = '';
 
     if (!empty($search)) {
-        $searchsql = ' AND ' . $DB->sql_like('c.fullname','c.shortname', ':search', false);
+        $searchsql = ' AND ' . $DB->sql_like('c.fullname', ':search', false);
         $params['search'] = '%' . $DB->sql_like_escape($search) . '%';
     }
     // SQL query to fetch course data
