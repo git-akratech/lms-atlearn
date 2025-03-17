@@ -2538,3 +2538,8 @@ Cheers from the \'{$a->sitename}\' administrator,
 {$a->signoff}';
 $string['registrationcontactno'] = 'No, I do not want to be contacted by other people';
 $string['registrationcontactyes'] = 'Yes, provide a form for other Moodlers to contact me';
+$string['selectrole'] = 'Select Role';
+$string['missingrole'] = 'Missing Role';
+$string['student'] = 'Student';
+$string['teacher'] = 'Teacher';
+
