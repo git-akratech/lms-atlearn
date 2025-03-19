@@ -35,6 +35,7 @@ use pix_icon;
 use renderer_base;
 use theme_config;
 use get_string;
+use moodle_page;
 use theme_alpha\util\course;
 use theme_alpha\util\user;
 
@@ -72,7 +73,7 @@ class core_renderer extends \core_renderer {
      */
     public function standard_head_html() {
         $output = parent::standard_head_html();
-        global $USER;
+        global $USER, $PAGE;
 
         $googleanalyticscode = "<script
                                     async
@@ -96,6 +97,8 @@ class core_renderer extends \core_renderer {
                 $googleanalyticscode
             );
         }
+         // Include custom JavaScript file
+        // $output .= '<script src="' . new moodle_url('/theme/alpha/javascript/custom.js') . '"></script>';
 
         return $output;
     }
@@ -1346,7 +1349,7 @@ class core_renderer extends \core_renderer {
                     'icon' => $iconcustomitem1,
                     'title' => $labelcustomitem1,
                     'url' => new moodle_url($urlcustomitem1),
-                    'isactiveitem' => $this->ismenuactive($urlcustomitem1),
+                    'isactiveitem' => $this->isMenuActive($urlcustomitem1),
                     'itemid' => 'itemCustomItem1',
                 ),
                 "7" => array(
@@ -1355,7 +1358,7 @@ class core_renderer extends \core_renderer {
                     'icon' => $iconcustomitem2,
                     'title' => $labelcustomitem2,
                     'url' => new moodle_url($urlcustomitem2),
-                    'isactiveitem' => $this->ismenuactive($urlcustomitem2),
+                    'isactiveitem' => $this->isMenuActive('/user/files.php'),
                     'itemid' => 'itemCustomItem2',
                 ),
                 "8" => array(
@@ -1364,7 +1367,7 @@ class core_renderer extends \core_renderer {
                     'icon' => $iconcustomitem3,
                     'title' => $labelcustomitem3,
                     'url' => new moodle_url($urlcustomitem3),
-                    'isactiveitem' => $this->ismenuactive($urlcustomitem3),
+                    'isactiveitem' => $this->isMenuActive('/theme/alpha/students.php'),
                     'itemid' => 'itemCustomItem3',
                 ),
                 "9" => array(
@@ -1373,7 +1376,7 @@ class core_renderer extends \core_renderer {
                     'icon' => $iconcustomitem4,
                     'title' => $labelcustomitem4,
                     'url' => new moodle_url($urlcustomitem4),
-                    'isactiveitem' => $this->ismenuactive($urlcustomitem4),
+                    'isactiveitem' => $this->isMenuActive('/theme/alpha/quiz.php'),
                     'itemid' => 'itemCustomItem4',
                 ),
                 "10" => array(
@@ -1382,7 +1385,7 @@ class core_renderer extends \core_renderer {
                     'icon' => $iconcustomitem5,
                     'title' => $labelcustomitem5,
                     'url' => new moodle_url($urlcustomitem5),
-                    'isactiveitem' => $this->ismenuactive($urlcustomitem5),
+                    'isactiveitem' => $this->isMenuActive('/local/mygrades/index.php'),
                     'itemid' => 'itemCustomItem5',
                 ),
             );
@@ -2729,5 +2732,49 @@ class core_renderer extends \core_renderer {
         );
     
         return $this->render_from_template('theme_alpha/custom_menu_items', array('headerlinks' => $headerlinks));
+    }   
+    public function render_custom_reports_menu() {
+        global $USER, $DB;
+
+        // Get system context
+        $context = context_system::instance();
+
+        // Get role IDs
+        $teacher_role_id = $DB->get_field('role', 'id', ['shortname' => 'coursecreator']); // Teacher role
+        $manager_role_id = $DB->get_field('role', 'id', ['shortname' => 'manager']); // Manager role
+
+        // Check if user has the teacher or manager role
+        $is_teacher = $DB->record_exists('role_assignments', [
+            'roleid' => $teacher_role_id,
+            'userid' => $USER->id,
+            'contextid' => $context->id
+        ]);
+
+        $is_manager = $DB->record_exists('role_assignments', [
+            'roleid' => $manager_role_id,
+            'userid' => $USER->id,
+            'contextid' => $context->id
+        ]);
+
+        // If the user is a teacher or manager, return the menu HTML
+        if ($is_teacher || $is_manager) {
+            return '
+            <li class="has-submenu">
+                <i class="fas fa-list list-icon"></i>
+                <a class="nav-link report-head" href="#">All Reports</a>
+                <ul class="submenu">
+                    <li class="nav-item"><a class="nav-link" href="' . new moodle_url('/theme/alpha/reports.php') . '">Enrolled Course Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="' . new moodle_url('/local/kopere_dashboard/courses_by_groups.php') . '">Courses By Groups</a></li>
+                    <li class="nav-item"><a class="nav-link" href="' . new moodle_url('/local/kopere_dashboard/guest_logins_report.php') . '">Guest Logins Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="' . new moodle_url('/local/kopere_dashboard/disk_usage_report.php') . '">Disk Usage Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="' . new moodle_url('/local/kopere_dashboard/users_never_logged_in.php') . '">Inactive Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="' . new moodle_url('/local/kopere_dashboard/users_completed_course.php') . '">Course completers</a></li>   
+                </ul>
+            </li>';
+        }
+
+        // Return empty string if user is not a teacher or manager
+        return '';
     }
+   
 }
