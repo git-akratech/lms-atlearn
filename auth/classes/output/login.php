@@ -107,7 +107,7 @@ class login implements renderable, templatable {
 
         $this->forgotpasswordurl = new moodle_url('/login/forgot_password.php');
         $this->loginurl = new moodle_url('/login/index.php');
-        $this->signupurl = new moodle_url('/login/signup.php');
+        $this->signupurl = new moodle_url('/auth/customsignup/signup.php');
 
         // Authentication instructions.
         $this->instructions = $CFG->auth_instructions;
