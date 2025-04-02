@@ -1,0 +1,38 @@
+.rui-course-card .rui-course-card-wrapper:after {
+    background-color: unset;
+ }
+.rui-course-card .rui-course-card-wrapper:before {
+    background: unset;
+    background-image: unset !important;
+}
+.mkcustom .rui-course-card-img-top {
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.mkcustom .rui-course-card-body {
+    position: relative;
+    top: unset;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 3;
+}
+.mkcustom.rui-course-card {
+    padding: 0;
+    height: unset;
+    background-color: #001b48;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+#region-main .rui-course-header {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #eeedef;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

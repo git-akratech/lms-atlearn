@@ -267,3 +267,5 @@ if ($THEME->settings->hidecourseindexnav == 0) {
 $THEME->sheets = array('custom/user_list');
 $THEME->javascripts = array('user_list');
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
+
+$THEME->sheets[] = 'custom';
