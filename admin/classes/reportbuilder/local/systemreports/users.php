@@ -29,6 +29,7 @@ use core_reportbuilder\local\report\filter;
 use core_reportbuilder\system_report;
 use core_role\reportbuilder\local\entities\role;
 use core_user\fields;
+use core_reportbuilder\local\report\column;
 use lang_string;
 use moodle_url;
 use pix_icon;
@@ -152,6 +153,37 @@ class users extends system_report {
                 return get_string('never');
             })
         );
+       // Add "Roles" column properly.
+    $rolesColumn = new column(
+        'roles',                         // Column name
+        new lang_string('roles', 'role'), // Column title (lang_string)
+        'user'                           // Entity name (must be string)
+    );
+
+    // FIX: Add required user ID field so Report Builder knows how to fetch data.
+    $rolesColumn->add_fields("{$entityuseralias}.id");
+
+    // Fetch and display user roles.
+    $rolesColumn->set_callback(static function ($value, \stdClass $row): string {
+        global $DB;
+
+        // Fetch user roles.
+        $sql = "SELECT r.shortname FROM {role_assignments} ra 
+                JOIN {role} r ON ra.roleid = r.id 
+                WHERE ra.userid = ?";
+        $roles = $DB->get_records_sql($sql, [$row->id]);
+
+        if (empty($roles)) {
+            return get_string('noroles', 'role');
+        }
+
+        return implode(', ', array_map(fn($role) => $role->shortname, $roles));
+    });
+
+    $this->add_column($rolesColumn);
+
+
+
 
         if ($column = $this->get_column('user:fullnamewithpicturelink')) {
             $column

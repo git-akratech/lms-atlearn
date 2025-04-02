@@ -2740,7 +2740,7 @@ class core_renderer extends \core_renderer {
         $context = context_system::instance();
 
         // Get role IDs
-        $teacher_role_id = $DB->get_field('role', 'id', ['shortname' => 'coursecreator']); // Teacher role
+        $teacher_role_id = $DB->get_field('role', 'id', ['shortname' => 'editingteacher']); // Teacher role
         $manager_role_id = $DB->get_field('role', 'id', ['shortname' => 'manager']); // Manager role
 
         // Check if user has the teacher or manager role
