@@ -531,7 +531,7 @@ class course_renderer extends \core_course_renderer {
             $acontent .= html_writer::tag('div', html_writer::link(
                 $viewmoreurl,
                 $viewmoretext,
-                array('class' => 'btn btn-sm btn-info ml-2')
+                array('class' => 'btn btn-sm btn-info ml-2 d-none')
             ));
         }
         $content .= '<div class="rui-number-of-courses d-inline-flex">' .
