@@ -45,7 +45,7 @@ class block_login extends block_base {
         $wwwroot = $CFG->wwwroot;
 
         if (signup_is_enabled()) {
-            $signup = $wwwroot . '/login/signup.php';
+            $signup = $wwwroot . '/auth/customsignup/signup.php';
         }
         // TODO: now that we have multiauth it is hard to find out if there is a way to change password
         $forgot = $wwwroot . '/login/forgot_password.php';
