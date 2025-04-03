@@ -10,7 +10,7 @@ if (empty($role)) {
     throw new moodle_exception('Missing role parameter. Please go back and try again.');
 }
 
-$roleid = ($role === 'teacher') ? 3 : 5;
+$roleid = ($role === 'teacher') ? 4 : 5;
 
 class manual_signup_form extends moodleform {
     function definition() {

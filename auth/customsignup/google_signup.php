@@ -20,7 +20,7 @@ redirect($google_signup_url);
 
 // Assign Role after successful login
 if (isloggedin() && !isguestuser() && isset($USER->id)) {
-    $roleid = ($role === 'teacher') ? 3 : 5; // Replace with correct role IDs
+    $roleid = ($role === 'teacher') ? 4 : 5; // Replace with correct role IDs
     role_assign($roleid, $USER->id, context_system::instance());
 }
 else {
