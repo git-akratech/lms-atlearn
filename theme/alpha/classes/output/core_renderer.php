@@ -1136,7 +1136,7 @@ class core_renderer extends \core_renderer {
 
             // Define which roles can see which items
             $customitem1_allowed_roles = array('manager', 'coursecreator', 'editingteacher', 'teacher');
-            $customitem3_allowed_roles = array('manager', 'coursecreator', 'editingteacher');
+            $customitem3_allowed_roles = array('manager', 'teacher');
             $customitem4_allowed_roles = array('student');
 
             // Check if user has any of the allowed roles
@@ -2740,12 +2740,19 @@ class core_renderer extends \core_renderer {
         $context = context_system::instance();
 
         // Get role IDs
-        $teacher_role_id = $DB->get_field('role', 'id', ['shortname' => 'editingteacher']); // Teacher role
+        $teacher_role_id = $DB->get_field('role', 'id', ['shortname' => 'teacher']); // Teacher role
+        $editingteacher_role_id = $DB->get_field('role', 'id', ['shortname' => 'editingteacher']); // Teacher role
         $manager_role_id = $DB->get_field('role', 'id', ['shortname' => 'manager']); // Manager role
 
         // Check if user has the teacher or manager role
         $is_teacher = $DB->record_exists('role_assignments', [
             'roleid' => $teacher_role_id,
+            'userid' => $USER->id,
+            'contextid' => $context->id
+        ]);
+         // Check if user has the teacher or manager role
+         $is_editingteacher = $DB->record_exists('role_assignments', [
+            'roleid' => $editingteacher_role_id,
             'userid' => $USER->id,
             'contextid' => $context->id
         ]);
@@ -2757,7 +2764,7 @@ class core_renderer extends \core_renderer {
         ]);
 
         // If the user is a teacher or manager, return the menu HTML
-        if ($is_teacher || $is_manager) {
+        if ($is_teacher || $is_manager || $is_editingteacher) {
             return '
             <li class="has-submenu">
                 <i class="fas fa-list list-icon"></i>

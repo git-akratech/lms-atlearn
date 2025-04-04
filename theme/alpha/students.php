@@ -1,6 +1,7 @@
 <?php
 require_once('../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
+global $USER, $DB;
 
 try {
     // Check for valid login
@@ -9,8 +10,7 @@ try {
     
     // Check permissions
     $isadmin = has_capability('moodle/site:config', $context);
-    $isteacher = false;
-    
+  
     // Get teacher's courses
     $courses = enrol_get_users_courses($USER->id);
     foreach ($courses as $course) {
@@ -50,12 +50,13 @@ try {
 
     // Get students with the student role
     $studentsql = "
-        SELECT u.id, u.firstname, u.lastname, u.email
+        SELECT u.id, u.firstname, u.lastname, u.username, u.email 
         FROM {user} u
         JOIN {role_assignments} ra ON u.id = ra.userid
         JOIN {context} ctx ON ra.contextid = ctx.id
         WHERE ra.roleid = :studentroleid
-          AND ctx.contextlevel = :contextlevel
+          AND ctx.contextlevel = :contextlevel 
+          $searchsql
     ";
 
     $params = [
@@ -63,10 +64,13 @@ try {
         'contextlevel' => CONTEXT_COURSE
     ];
 
+    $searchsql = '';
     if (!empty($search)) {
-        $studentsql .= " AND (" . $DB->sql_like('u.firstname', ':search', false) . " 
-                         OR " . $DB->sql_like('u.lastname', ':search', false) . ")";
-        $params['search'] = '%' . $DB->sql_like_escape($search) . '%';
+        $searchlike = '%' . $DB->sql_like_escape($search) . '%';
+        $searchsql = " AND (" . $DB->sql_like('u.firstname', ':search1', false) . " 
+                       OR " . $DB->sql_like('u.lastname', ':search2', false) . ")";
+        $params['search1'] = $searchlike;
+        $params['search2'] = $searchlike;
     }
 
     // Pagination
