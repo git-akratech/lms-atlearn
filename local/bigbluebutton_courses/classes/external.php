@@ -22,12 +22,14 @@ class local_bigbluebutton_courses_external extends external_api {
         $baseMeetingUrl = 'https://lms.atlearn.in/mod/bigbluebuttonbn/bbb_view.php?action=join';
          // Base URL for BigBlueButton settings page
          $baseSettingsUrl = 'https://lms.atlearn.in/course/modedit.php?update=';
+           // Get current time
+         $current_time = time();
         
         // SQL query to get all BigBlueButton activities across all courses
-        $sql = "SELECT 
+        $sql_bbb  = "SELECT 
                 b.id AS bigbluebuttonid, 
-                b.openingtime AS meetingopeningtime,
-                b.closingtime AS meetingclosingtime,
+                b.openingtime,
+                b.closingtime,
                 b.name AS onlineclassname, 
                 cm.id AS cmid, 
                 c.id AS courseid, 
@@ -46,13 +48,13 @@ class local_bigbluebutton_courses_external extends external_api {
         
         // Execute the query and fetch results
       
-        $results = $DB->get_records_sql($sql, [$useremail]);
+        $bbb_results  = $DB->get_records_sql($sql_bbb , [$useremail]);
          // Get current timestamp
          $current_time = time();
         
         // Prepare the response structure
         $activities = [];
-        foreach ($results as $result) {
+        foreach ($bbb_results  as $result) {
             $meetingurl = null;
             if ($current_time >= $result->meetingopeningtime && $current_time <= $result->meetingclosingtime) {
                 $meetingurl = $baseMeetingUrl . '&id=' . $result->cmid . '&bn=' . $result->bigbluebuttonid;
@@ -60,18 +62,56 @@ class local_bigbluebutton_courses_external extends external_api {
             $settingsUrl = $baseSettingsUrl . $result->cmid . '&return=1';
 
             $activities[] = [
+                'type' => 'bigbluebutton',
                 'courseid' => $result->courseid,
-                'coursename' => $result->coursename,               
-                'bigbluebuttonid' => $result->bigbluebuttonid,
-                'onlineclassname' => $result->onlineclassname,
+                'coursename' => $result->coursename,
+                'id' => $result->bigbluebuttonid,
+                'name' => $result->onlineclassname,
                 'meetingurl' => $meetingurl,
-                'settingsurl' => $settingsUrl, // Use the constructed settings URL
-                'meetingopeningtime' => date('Y-m-d H:i:s', $result->meetingopeningtime),
-                'meetingclosingtime' => date('Y-m-d H:i:s', $result->meetingclosingtime),
+                'settingsurl' => $settingsurl,
+                'start_time' => date('Y-m-d H:i:s', $result->openingtime),
+                'end_time' => date('Y-m-d H:i:s', $result->closingtime),
+                'duration' => null,
+                'meeting_id' => null,
+                'join_url' => $meetingurl,
                
             ];
         }
-        
+         // --- Fetch Zoom meetings ---
+                $sql_zoom = "SELECT 
+                            z.id,
+                            z.meeting_id,
+                            z.name,
+                            z.start_time,
+                            z.duration,
+                            z.join_url,
+                            c.id AS courseid,
+                            c.fullname AS coursename
+                    FROM {zoom} z
+                    JOIN {course} c ON z.course = c.id
+                    JOIN {enrol} e ON e.courseid = c.id
+                    JOIN {user_enrolments} ue ON ue.enrolid = e.id
+                    JOIN {user} u ON u.id = ue.userid
+                    WHERE u.email = ?";
+
+            $zoom_results = $DB->get_records_sql($sql_zoom, [$useremail]);
+
+            foreach ($zoom_results as $zoom) {
+            $activities[] = [
+                'type' => 'zoom',
+                'courseid' => $zoom->courseid,
+                'coursename' => $zoom->coursename,
+                'id' => $zoom->id,
+                'name' => $zoom->name,
+                'meetingurl' => $zoom->join_url,
+                'settingsurl' => null,
+                'start_time' => date('Y-m-d H:i:s', $zoom->start_time),
+                'end_time' => null,
+                'duration' => $zoom->duration,
+                'meeting_id' => $zoom->meeting_id,
+                'join_url' => $zoom->join_url,
+            ];
+            }
         // Return the results as an array
         return $activities;
     }
@@ -95,14 +135,18 @@ class local_bigbluebutton_courses_external extends external_api {
     public static function get_courses_with_bigbluebutton_returns() {
         return new \external_multiple_structure(
             new \external_single_structure([
-                'courseid' => new \external_value(PARAM_INT, 'Course ID'),
-                'coursename' => new \external_value(PARAM_TEXT, 'Course Name'),
-                'bigbluebuttonid' => new \external_value(PARAM_INT, 'BigBlueButton Activity ID'),
-                'onlineclassname' => new \external_value(PARAM_TEXT, 'BigBlueButton Activity Name'),
-                'meetingurl' => new \external_value(PARAM_URL, 'BigBlueButton Meeting Join URL'),
-                'settingsurl' => new \external_value(PARAM_URL, 'BigBlueButton Settings URL'),
-                'meetingopeningtime' => new \external_value(PARAM_TEXT, 'Online Meeting Opening Time'),
-                'meetingclosingtime' => new \external_value(PARAM_TEXT, 'ONline meeting Closing Time '),
+            'type' => new external_value(PARAM_TEXT, 'Meeting type: bigbluebutton or zoom'),
+            'courseid' => new external_value(PARAM_INT, 'Course ID'),
+            'coursename' => new external_value(PARAM_TEXT, 'Course Name'),
+            'id' => new external_value(PARAM_INT, 'Meeting internal ID'),
+            'name' => new external_value(PARAM_TEXT, 'Meeting Name'),
+            'meetingurl' => new external_value(PARAM_URL, 'Meeting Join URL', VALUE_OPTIONAL),
+            'settingsurl' => new external_value(PARAM_URL, 'Settings URL (only for BBB)', VALUE_OPTIONAL),
+            'start_time' => new external_value(PARAM_TEXT, 'Start Time'),
+            'end_time' => new external_value(PARAM_TEXT, 'End Time', VALUE_OPTIONAL),
+            'duration' => new external_value(PARAM_INT, 'Duration in minutes', VALUE_OPTIONAL),
+            'meeting_id' => new external_value(PARAM_TEXT, 'Zoom Meeting ID (only for Zoom)', VALUE_OPTIONAL),
+            'join_url' => new external_value(PARAM_URL, 'Zoom Join URL (only for Zoom)', VALUE_OPTIONAL),
             ])
         );
     }
@@ -119,7 +163,7 @@ class local_bigbluebutton_courses_external extends external_api {
           $baseSettingsUrl = 'https://lms.atlearn.in/course/modedit.php?update=';
         
         // SQL query to get all BigBlueButton activities for a specific course
-        $sql = "SELECT b.id AS bigbluebuttonid, b.openingtime AS meetingopeningtime,
+        $sql_bbb  = "SELECT b.id AS bigbluebuttonid, b.openingtime AS meetingopeningtime,
                 b.closingtime AS meetingclosingtime, b.name AS onlineclassname, cm.id AS cmid
                 FROM {bigbluebuttonbn} b
                 JOIN {course_modules} cm ON cm.instance = b.id 
@@ -127,13 +171,13 @@ class local_bigbluebutton_courses_external extends external_api {
                 WHERE m.name = 'bigbluebuttonbn' AND b.course = ?";
         
         // Execute the query and fetch results
-        $results = $DB->get_records_sql($sql, [$courseid]);
+        $results_bbb  = $DB->get_records_sql($sql_bbb , [$courseid]);
           // Get current timestamp
           $current_time = time();
         
         // Prepare the response structure
         $activities = [];
-        foreach ($results as $result) {
+        foreach ($results_bbb  as $result) {
             $meetingurl = null;
             if ($current_time >= $result->meetingopeningtime && $current_time <= $result->meetingclosingtime) {
                 $meetingurl = $baseMeetingUrl . '&id=' . $result->cmid . '&bn=' . $result->bigbluebuttonid;
@@ -141,15 +185,37 @@ class local_bigbluebutton_courses_external extends external_api {
             $settingsUrl = $baseSettingsUrl . $result->cmid . '&return=1';
 
             $activities[] = [
-                'bigbluebuttonid' => $result->bigbluebuttonid,
-                'onlineclassname' => $result->onlineclassname,
-                'meetingurl' => $meetingurl, // Constructed meeting URL
-                'settingsurl' => $settingsUrl, // Use the constructed settings URL
-                'meetingopeningtime' => date('Y-m-d H:i:s', $result->meetingopeningtime),
-                'meetingclosingtime' => date('Y-m-d H:i:s', $result->meetingclosingtime),
+                'type' => 'bigbluebutton',
+                'meetingid' => $result->bigbluebuttonid,
+                'meetingname' => $result->onlineclassname,
+                'meetingurl' => $meetingurl,
+                'settingsurl' => $settingsUrl,
+                'starttime' => date('Y-m-d H:i:s', $result->meetingopeningtime),
+                'endtime' => date('Y-m-d H:i:s', $result->meetingclosingtime),
             ];
         }
-        
+         // ✅ Get Zoom meetings
+            $sql_zoom = "SELECT id, name, start_time, duration, join_url 
+            FROM {zoom} 
+            WHERE course = ?";
+
+        $results_zoom = $DB->get_records_sql($sql_zoom, [$courseid]);
+
+        foreach ($results_zoom as $zoom) {
+        $starttime = $zoom->start_time;
+        $endtime = $starttime + ($zoom->duration * 60); // duration is in minutes
+        $meetingurl = ($current_time >= $starttime && $current_time <= $endtime) ? $zoom->join_url : null;
+
+            $activities[] = [
+                'type' => 'zoom',
+                'meetingid' => $zoom->id,
+                'meetingname' => $zoom->name,
+                'meetingurl' => $meetingurl,
+                'settingsurl' => null,
+                'starttime' => date('Y-m-d H:i:s', $starttime),
+                'endtime' => date('Y-m-d H:i:s', $endtime),
+            ];
+        }
         // Return the results as an array
         return $activities;
     }
@@ -173,12 +239,13 @@ class local_bigbluebutton_courses_external extends external_api {
     public static function get_courses_with_filter_bigbluebutton_returns() {
         return new \external_multiple_structure(
             new \external_single_structure([
-                'bigbluebuttonid' => new \external_value(PARAM_INT, 'BigBlueButton Activity ID'),
-                'onlineclassname' => new \external_value(PARAM_TEXT, 'BigBlueButton Activity Name'),
-                'meetingurl' => new \external_value(PARAM_URL, 'BigBlueButton Meeting Join URL'),
-                'settingsurl' => new \external_value(PARAM_URL, 'BigBlueButton Settings URL'),
-                'meetingopeningtime' => new \external_value(PARAM_TEXT, 'Online Meeting Opening Time'),
-                'meetingclosingtime' => new \external_value(PARAM_TEXT, 'ONline meeting Closing Time '),
+                'type' => new \external_value(PARAM_TEXT, 'Meeting type: bigbluebutton or zoom'),
+                'meetingid' => new \external_value(PARAM_INT, 'Meeting ID'),
+                'meetingname' => new \external_value(PARAM_TEXT, 'Meeting Name'),
+                'meetingurl' => new \external_value(PARAM_URL, 'Meeting Join URL', VALUE_OPTIONAL),
+                'settingsurl' => new \external_value(PARAM_URL, 'Settings URL (for BBT only)', VALUE_OPTIONAL),
+                'starttime' => new \external_value(PARAM_TEXT, 'Meeting Start Time'),
+                'endtime' => new \external_value(PARAM_TEXT, 'Meeting End Time'),
             ])
         );
     }
