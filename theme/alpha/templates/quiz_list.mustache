@@ -38,6 +38,9 @@
                     <th style="color:#fff;" class="{{#name_sorted}}sorted-{{direction}}{{/name_sorted}}" data-sort="name">
                         {{#str}}quizname, theme_alpha{{/str}}
                     </th>
+                    <th style="color:#fff;" class="{{#course_sorted}}sorted-{{direction}}{{/course_sorted}}" data-sort="course">
+                        {{#str}}coursename, theme_alpha{{/str}}
+                    </th>
                     <th style="color:#fff;" class="{{#timeopen_sorted}}sorted-{{direction}}{{/timeopen_sorted}}" data-sort="timeopen">
                         {{#str}}timeopen, theme_alpha{{/str}}
                     </th>
@@ -50,9 +53,8 @@
                 {{#quizzes}}
                 <tr>
                     <td>{{id}}</td>
-                    <td>
-                        <a href="{{quizurl}}">{{name}}</a>
-                    </td>
+                    <td><a href="{{quizurl}}">{{name}}</a></td>
+                    <td><a href="{{courseurl}}">{{coursename}}</a></td>
                     <td>{{timeopen}}</td>
                     <td>{{timeclose}}</td>
                 </tr>

@@ -12,24 +12,27 @@ class quiz_data {
 
         $direction = strtoupper($direction) === 'DESC' ? 'DESC' : 'ASC';
 
-        // Modified SQL to include course module ID (cm.id as cmid)
-        $sql = "SELECT q.id, q.name, q.timeopen, q.timeclose, c.id as courseid, 
-        c.fullname as coursename, c.shortname as courseshortname,
-        cm.id as cmid
-        FROM {quiz} q
-        JOIN {course} c ON q.course = c.id
-        JOIN {course_modules} cm ON cm.instance = q.id
-        JOIN {modules} m ON m.id = cm.module AND m.name = 'quiz'
-        WHERE q.id > 0";
+       
 
-        $params = array();
+        $params = ['userid' => $USER->id];
+        $searchsql = '';
         
         if (!empty($search)) {
-            $sql .= " WHERE q.name LIKE :search OR c.fullname LIKE :search2";
             $searchterm = '%' . $search . '%';
+            $searchsql = " AND (q.name LIKE :search OR c.fullname LIKE :search2)";     
             $params['search'] = $searchterm;
             $params['search2'] = $searchterm;
         }
+         // Modified SQL to include course module ID (cm.id as cmid)
+         $sql = "SELECT q.id, q.name, q.timeopen, q.timeclose, c.id as courseid, 
+         c.fullname as coursename, c.shortname as courseshortname,
+         cm.id as cmid
+         FROM {quiz} q
+         JOIN {quiz_attempts} qa ON qa.quiz = q.id AND qa.userid = :userid
+         JOIN {course} c ON q.course = c.id
+         JOIN {course_modules} cm ON cm.instance = q.id
+         JOIN {modules} m ON m.id = cm.module AND m.name = 'quiz'
+         WHERE q.id > 0 $searchsql";
 
         $total = $DB->count_records_sql("SELECT COUNT(1) FROM ($sql) temp", $params);
 
