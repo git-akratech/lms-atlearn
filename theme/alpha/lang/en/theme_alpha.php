@@ -1484,6 +1484,7 @@ $string['next'] = 'Next';
 $string['quizlist'] = 'Test List';
 $string['searchquizzes'] = 'Search Tests...';
 $string['quizname'] = 'Test Name';
+$string['coursename'] = 'Course Name';
 $string['quizzes'] = 'Tests';
 $string['course'] = 'Course';
 $string['timeopen'] = 'Time Open';

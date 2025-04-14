@@ -8,9 +8,9 @@ try {
 
     // Get page parameters
     $page = optional_param('page', 0, PARAM_INT);
-    $search = optional_param('search', '', PARAM_RAW);
+    $search = optional_param('search', '', PARAM_TEXT);
     $perpage = optional_param('perpage', 10, PARAM_INT);
-    $sort = optional_param('sort', 'id', PARAM_ALPHA);
+    $sort = optional_param('sort','id', PARAM_ALPHA);
     $direction = optional_param('direction', 'ASC', PARAM_ALPHA);
 
     // Page setup
@@ -34,7 +34,9 @@ try {
         $sort, 
         $direction
     );
-
+    if (!$quizzes) {
+        throw new moodle_exception('No quizzes found.', 'theme_alpha');
+    }
     // Setup pagination
     $totalquizzes = $quizzes['total'];
     $totalpages = ceil($totalquizzes / $perpage);
