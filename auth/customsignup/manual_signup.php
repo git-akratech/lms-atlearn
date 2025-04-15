@@ -73,14 +73,47 @@ if ($mform->is_cancelled()) {
 }
 
 echo $OUTPUT->header();
-echo '<div style="display: flex; justify-content: center; align-items: center; height: 79vh;margin-top: 20px;">';
-echo '  <div style="width: 435px; padding: 20px; border-radius: 10px; background: #f9f9f9; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);">';
+echo '<div class="signup-card">';
+echo '  <div class="card-form">';
 echo '      <h2 style="text-align: center; margin-bottom: 10px;">Sign Up</h2>';
 $mform->display();
 echo '      <p style="text-align: center; margin-top: 15px;">';
 echo '          Already have an account? <a href="' . $CFG->wwwroot . '/login/index.php" style="color: #0073ea; text-decoration: none; font-weight: bold;">Log in</a>';
 echo '      </p>';
 echo '  </div>';
+if ($roleid === 4) {
+echo ' <div class="card-image"><h2>Signup As Teacher</h2><img class="img-fluid" src="' . $CFG->wwwroot . '/theme/alpha/doc/teacher.webp" alt="App Screeshot" title="herobanner icon" /></div>';
+} else {
+  echo ' <div class="card-image"><h2>Signup As Student</h2><img class="img-fluid" src="' . $CFG->wwwroot . '/theme/alpha/doc/student.webp" alt="App Screeshot" title="herobanner icon" /></div>';
+}
 echo '</div>';
 echo $OUTPUT->footer();
 ?>
+
+<style>
+  .signup-card {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px;
+    width: 800px;
+    background: #E1f8dc;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+  }
+  .signup-card .card-form { 
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f9f9f9; 
+      }
+  .signup-card .card-image {
+    width: 60%;
+    text-align: center;
+    /* background: #E1f8dc; */
+  }
+
+</style>
+
+
+
