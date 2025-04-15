@@ -1061,6 +1061,32 @@
       'selectedsharingoption' => 2,
       'userinputsharingkey' => '',
     ),
+    'mod_zoom/zoomid' => 
+    array (
+      'mode' => 2,
+      'component' => 'mod_zoom',
+      'area' => 'zoomid',
+      'selectedsharingoption' => 2,
+      'userinputsharingkey' => '',
+    ),
+    'mod_zoom/zoommeetingsecurity' => 
+    array (
+      'mode' => 1,
+      'component' => 'mod_zoom',
+      'area' => 'zoommeetingsecurity',
+      'selectedsharingoption' => 2,
+      'userinputsharingkey' => '',
+    ),
+    'mod_zoom/oauth' => 
+    array (
+      'mode' => 1,
+      'simplekeys' => true,
+      'simpledata' => true,
+      'component' => 'mod_zoom',
+      'area' => 'oauth',
+      'selectedsharingoption' => 2,
+      'userinputsharingkey' => '',
+    ),
     'communication_customlink/customlink' => 
     array (
       'mode' => 1,
@@ -1217,33 +1243,6 @@
       'staticaccelerationsize' => 1,
       'component' => 'tool_usertours',
       'area' => 'stepdata',
-      'selectedsharingoption' => 2,
-      'userinputsharingkey' => '',
-    ),
-    'local_kopere_dashboard/performancemonitor_cache' => 
-    array (
-      'mode' => 1,
-      'ttl' => 600,
-      'component' => 'local_kopere_dashboard',
-      'area' => 'performancemonitor_cache',
-      'selectedsharingoption' => 2,
-      'userinputsharingkey' => '',
-    ),
-    'local_kopere_dashboard/report_getdata_cache' => 
-    array (
-      'mode' => 1,
-      'ttl' => 172800,
-      'component' => 'local_kopere_dashboard',
-      'area' => 'report_getdata_cache',
-      'selectedsharingoption' => 2,
-      'userinputsharingkey' => '',
-    ),
-    'local_kopere_dashboard/courses_all_courses' => 
-    array (
-      'mode' => 1,
-      'ttl' => 86400,
-      'component' => 'local_kopere_dashboard',
-      'area' => 'courses_all_courses',
       'selectedsharingoption' => 2,
       'userinputsharingkey' => '',
     ),

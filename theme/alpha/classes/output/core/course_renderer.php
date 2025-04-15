@@ -238,7 +238,7 @@ class course_renderer extends \core_course_renderer {
         }
 
         // Display list of subcategories.
-        $content = html_writer::start_tag('div', array('class' => 'subcategories'));
+        $content = html_writer::start_tag('div', array('class' => 'subcategories custom_categoreis'));
 
         if (!empty($pagingbar)) {
             $content .= $pagingbar;
