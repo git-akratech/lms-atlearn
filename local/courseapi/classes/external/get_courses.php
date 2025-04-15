@@ -27,7 +27,7 @@ class get_courses_external extends external_api {
         $sql = "SELECT c.id, c.fullname, c.shortname,c.summary, c.startdate, c.enddate, 
                    c.category, cc.name AS categoryname, c.timecreated,c.timemodified,
                    u.id AS creatorid, u.firstname AS creatorfirstname, 
-                   u.lastname AS creatorlastname, u.picture, u.imagealt ,u.description AS creatordescription
+                   u.lastname AS creatorlastname, u.picture, u.imagealt ,u.description AS creatordescription, u.phone1 AS creatorphone
             FROM {course} c
             JOIN {course_categories} cc ON cc.id = c.category
             JOIN {context} ctx ON ctx.instanceid = c.id AND ctx.contextlevel = 50
@@ -90,6 +90,7 @@ class get_courses_external extends external_api {
                 'creatorname' => $course->creatorfirstname . ' ' . $course->creatorlastname,
                 'creatorimage' => $profileimgurl,
                 'creatorbio' => $course->creatordescription,
+                'creatorphone' => $course->creatorphone,
                 'courseimage' => $courseimage,
                 'startdate' =>  $course->startdate,
                 'enddate' =>  $course->enddate,
@@ -112,6 +113,7 @@ class get_courses_external extends external_api {
                 'creatorid' => new external_value(PARAM_INT, 'Creator ID'),
                 'creatorname' => new external_value(PARAM_TEXT, 'Creator Name'),
                 'creatorbio' => new external_value(PARAM_RAW, 'Creator Description'),
+                'creatorphone' => new external_value(PARAM_TEXT, 'Creator Phone Number'),
                 'creatorimage' => new external_value(PARAM_URL, 'Creator Image URL'),
                 'courseimage' => new external_value(PARAM_URL, 'Course Image URL'),
                 'startdate' => new external_value(PARAM_TEXT, 'Start Date'),
