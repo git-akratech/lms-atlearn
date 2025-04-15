@@ -54,7 +54,7 @@ class course_summary_exporter extends \core\external\exporter {
     }
 
     protected function get_other_values(renderer_base $output) {
-        global $CFG;
+        global $CFG, $COURSE, $DB;
         $courseimage = self::get_course_image($this->data);
         if (!$courseimage) {
             $courseimage = $output->get_generated_image_for_id($this->data->id);
@@ -66,6 +66,11 @@ class course_summary_exporter extends \core\external\exporter {
         }
         $progress = floor($progress ?? 0);
         $coursecategory = \core_course_category::get($this->data->category, MUST_EXIST, true);
+
+         // Fetch course creator details.
+        // $creator = $DB->get_record('user', array('id' => $this->data->id), 'firstname, lastname');
+        // $creatorname = $creator ? fullname($creator) : get_string('unknownuser', 'moodle');
+
         return array(
             'fullnamedisplay' => get_course_display_name_for_list($this->data),
             'viewurl' => (new moodle_url('/course/view.php', array('id' => $this->data->id)))->out(false),
@@ -75,7 +80,8 @@ class course_summary_exporter extends \core\external\exporter {
             'isfavourite' => $this->related['isfavourite'],
             'hidden' => boolval(get_user_preferences('block_myoverview_hidden_course_' . $this->data->id, 0)),
             'showshortname' => $CFG->courselistshortnames ? true : false,
-            'coursecategory' => $coursecategory->name
+            'coursecategory' => $coursecategory->name,
+            // 'coursecreator' => $creatorname // Added course creator
         );
     }
 
