@@ -45,11 +45,13 @@
         <div id="chooseform">
             <form action="{{actionurl}}" id="chooserform" method="{{method}}">
                 <div id="typeformdiv">
+                    <input type="hidden" name="courseid" value="{{courseid}}">
+                    <input type="hidden" name="cmid" value="{{cmid}}">
                     {{#params}}
                         <input type="hidden" id="{{id}}" name="{{name}}" value="{{value}}">
                     {{/params}}
                     <input type="hidden" name="sesskey" value="{{sesskey}}">
-                </div>
+                   
 
                 <div class="options">
                     <div class="instruction">

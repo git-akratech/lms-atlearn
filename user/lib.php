@@ -1447,3 +1447,13 @@ function user_update_device_public_key(string $uuid, string $appid, string $publ
 
     return true;
 }
+
+function password_policy_check($password) {
+    $errmsg = '';
+    // Pass null as the user object since it's a new user
+    if (!check_password_policy($password, $errmsg, null)) {
+        return $errmsg;
+    }
+    return '';
+}
+
