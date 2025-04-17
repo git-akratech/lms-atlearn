@@ -3,11 +3,12 @@ require('../../config.php');
 require_once($CFG->dirroot.'/lib/formslib.php');
 require_once($CFG->dirroot.'/lib/moodlelib.php');
 require_once($CFG->dirroot.'/user/lib.php');
+require_once($CFG->libdir.'/phpmailer/moodle_phpmailer.php');
 
 
 $role = optional_param('role', '', PARAM_ALPHA);
 if (empty($role)) {
-    throw new moodle_exception('Missing role parameter. Please go back and try again.');
+    $errors['role'] = 'Missing role parameter. Please go back and try again.';
 }
 
 $roleid = ($role === 'teacher') ? 4 : 5;
@@ -42,9 +43,33 @@ class manual_signup_form extends moodleform {
         $mform->addElement('hidden', 'role', $role);
         $mform->setType('role', PARAM_ALPHA);
 
-        $mform->addElement('submit', 'submitbutton', 'Sign Up');
-        $mform->addElement('cancel', 'cancelbutton', 'Cancel');
+        $buttonarray = array();
+        $buttonarray[] = $mform->createElement('submit', 'submitbutton', 'Sign Up');
+        $buttonarray[] = $mform->createElement('cancel', 'cancelbutton', 'Cancel');
+        $mform->addGroup($buttonarray, 'buttonar', '', ['&nbsp;&nbsp;&nbsp;&nbsp;'], false);
+
     }
+    function validation($data, $files) {
+        global $DB;
+    
+        $errors = [];
+    
+        if ($DB->record_exists('user', ['username' => $data['username']])) {
+            $errors['username'] = 'This username is already taken.';
+        }
+    
+        if ($DB->record_exists('user', ['email' => $data['email']])) {
+            $errors['email'] = 'This email is already registered.';
+        }
+    
+        // Check password policy (without throwing an error page)
+        if ($errmsg = password_policy_check($data['password'], $data['username'])) {
+            $errors['password'] = $errmsg;
+        }
+    
+        return $errors;
+    }
+
 }
 
 $mform = new manual_signup_form();
@@ -53,23 +78,57 @@ if ($mform->is_cancelled()) {
     redirect(new moodle_url('/index.php'));
 } else if ($data = $mform->get_data()) {
     global $DB;
-    
+    $data = $mform->get_data();
+
     $user = new stdClass();
     $user->username = $data->username;
     $user->password = $data->password;
     $user->email = $data->email;
-    $user->confirmed = 1;
+    $user->confirmed = 0;
     $user->mnethostid = $CFG->mnet_localhost_id;
     $user->auth = 'manual';
-  
-    $user->id = user_create_user($user);
-    role_assign($roleid, $user->id, context_system::instance());
+    $user->timecreated = time();
 
-    if (!$DB->record_exists('user', ['id' => $user->id])) {
-        throw new moodle_exception('User creation failed. Please try again.');
+    try {
+        $user->id = $DB->insert_record('user', $user);
+    } catch (Exception $e) {
+        echo $OUTPUT->header();
+        echo '<div style="color:red;text-align:center;margin-top:20px;">Could not create user. Please try again later.</div>';
+        $mform->set_data($data);
+        $mform->display();
+        echo $OUTPUT->footer();
+        exit;
     }
 
-    redirect(new moodle_url('/login/index.php'), 'Signup successful, please log in.');
+
+    // Confirmation token (you can also use a custom table)
+    $token = md5(uniqid(rand(), true));
+    $record = new stdClass();
+    $record->userid = $user->id;
+    $record->token = $token;
+    $record->timecreated = time();
+    $DB->insert_record('user_email_verification', $record); // Ideally, use a custom table
+
+  // Send confirmation email
+  $confirmurl = new moodle_url('/auth/customsignup/confirm_signup.php', ['token' => $token]);
+  $subject = "Verify your Moodle account";
+  $messagehtml = "<p>Hello {$user->username},</p>
+      <p>Please verify your email address by clicking the link below:</p>
+      <p><a href='" . $confirmurl->out(false) . "'>Verify my email</a></p>
+      <p>If you did not request this account, you can ignore this email.</p>
+      <p>Thanks,<br/>Moodle Support</p>";
+
+  $messagetext = "Hello {$user->username},\n\nPlease verify your email address by visiting this link:\n" .
+                 $confirmurl->out(false) .
+                 "\n\nThanks,\nMoodle Support";
+
+  email_to_user($user, core_user::get_support_user(), $subject, $messagetext, $messagehtml);
+
+  echo $OUTPUT->header();
+  echo '<div style="text-align:center; margin-top:50px;">A confirmation email has been sent to your Gmail. Please check it to verify your account.</div>';
+  echo $OUTPUT->footer();
+  exit;
+
 }
 
 echo $OUTPUT->header();
