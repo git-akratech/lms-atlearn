@@ -2,7 +2,7 @@
 require('../../config.php');
 
 
-$PAGE->set_url(new moodle_url('/auth/customsignup/signup.php'));
+$PAGE->set_url(new moodle_url('/login/signup.php'));
 $PAGE->set_context(context_system::instance());
 $PAGE->set_title('Select Your Role');
 $PAGE->set_heading('Signup as Teacher or Student');

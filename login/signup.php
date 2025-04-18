@@ -33,7 +33,7 @@ if (!$authplugin = signup_is_enabled()) {
     throw new \moodle_exception('notlocalisederrormessage', 'error', '', 'Sorry, you may not use this page.');
 }
 
-$PAGE->set_url('/auth/customsignup/signup.php');
+$PAGE->set_url('/login/signup.php');
 $PAGE->set_context(context_system::instance());
 
 // If wantsurl is empty or /login/signup.php, override wanted URL.

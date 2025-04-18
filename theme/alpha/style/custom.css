@@ -64,3 +64,12 @@
 .rui-category-link:hover {
     color: #001b48 !important;
 }
+
+#page-mod-quiz-report .main-content #tablecontainer .no-overflow {
+    overflow:auto !important;
+}
+
+#page-mod-quiz-report .main-content #tablecontainer .no-overflow #attempts thead {
+    top: unset;
+    z-index: unset;
+}

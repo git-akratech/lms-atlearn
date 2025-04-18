@@ -34,3 +34,4 @@ trashdir/
 # Ignore other system files (macOS, Windows)
 .DS_Store
 Thumbs.db
+config.php
