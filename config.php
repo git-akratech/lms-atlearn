@@ -38,12 +38,12 @@ $CFG = new stdClass();
 // will be stored.  This database must already have been created         //
 // and a username/password created to access it.                         //
 
-$CFG->dbtype    = 'mariadb';      // 'pgsql', 'mariadb', 'mysqli', 'auroramysql', 'sqlsrv' or 'oci'
+$CFG->dbtype    = 'mysqli';      // 'pgsql', 'mariadb', 'mysqli', 'auroramysql', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native';     // 'native' only at the moment
 $CFG->dbhost    = 'localhost';  // eg 'localhost' or 'db.isp.com' or IP
-$CFG->dbname    = 'moodle_45';     // database name, eg moodle
+$CFG->dbname    = 'lms_atlearn';     // database name, eg moodle
 $CFG->dbuser    = 'root';   // your database username
-$CFG->dbpass    = '';   // your database password
+$CFG->dbpass    = 'root';   // your database password
 $CFG->prefix    = 'mdl_';       // prefix to use for all table names
 $CFG->dboptions = array(
     'dbpersist' => false,       // should persistent database connections be
@@ -145,7 +145,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot   = 'http://localhost/lms.atlearn.in';
+$CFG->wwwroot   = 'http://localhost/lms-atlearn';
 
 
 //=========================================================================
@@ -161,7 +161,7 @@ $CFG->wwwroot   = 'http://localhost/lms.atlearn.in';
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = '/xampp/htdocs/lms.atlearn.in/moodledata';
+$CFG->dataroot  = '/Applications/MAMP/htdocs/lms-atlearn/moodledata';
 
 
 //=========================================================================
